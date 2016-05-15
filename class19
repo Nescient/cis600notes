@@ -1,0 +1,129 @@
+# Wed Apr 04 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+drew the rain, sprinkler, grass example from wikipedia
+lets call the nodes in the graph/tree R, S, and G
+
+for ordering, sources are below sinks.
+
+R is below S
+R \below G
+S \below G
+
+parents are below their children for partial orderings in computer science.
+
+as a directed, acyclic graph something about topology.
+
+assuming transitivity:
+
+R \below S \below G
+
+calculate all 8 joint probabilities:
+
+P(R=T, S=T, G=T)
+P(R=T, S=T, G=F)
+...
+P(R=F, S=F, G=F)
+
+Hint:  P(X, Y, Z) = P(X)P(Y|X)P(Z|X,Y)
+----------------
+0.2 * 0.01 * 0.99 = 0.00198
+0.2 * 0.01 * 0.01 = 0.00002
+0.2 * 0.99 * 0.8  = 0.1584
+0.2 * 0.99 * 0.2  = 0.0396
+0.8 * 0.01 * 0.99 = 0.00792
+0.8 * 0.01 * 0.01 = 0.00008
+0.8 * 0.99 * 0.8  = 0.6336
+0.8 * 0.99 * 0.2  = 0.1584
+                   +-------
+                     1.0
+
+second half is wrong according to blair, should be:
+0.288, 0.032, 0.0, 0.48
+
+calculate the total probability that:
+P(S=T) = ?
+P(G=T) = ?
+
+can we just add the probabilities?  ...so, yes
+
+P(S=T) = P(S=T, R=T) + P(S=T, R=F)
+       = --0.4 + 0.01-- NOPE
+
+should the commas be pipes?  no.  so maybe we cant just add the probabilities?
+
+P(S=T) = P(S=T, R=T) + P(S=T, R=F)
+       = P(S=T AND R=T) + P(S=T ^ R=F)
+       = P(R=T)P(S=T|R=T) + P(R=F)P(S=T|R=F)
+       = 0.2 * 0.01 + 0.8 * 0.4
+       = 0.322
+
+P(G=T) = P(G=T, S=T, R=T) + P(G=T, S=T, R=F) + P(G=T, S=F, R=T) + P(G=T, S=F, R=F)
+
+this is the sum of the joint probabilities that G=T and R=T and S=T plus G=T and R=T and S=F plus ...
+       = P(R=T)P(S=T|R=T)P(G=T|S,R)
+       + P(R=F)P(S=T|R=F)P(G=T|S,!R)
+       + P(R=T)P(S=F|R=T)P(G=T|!S,R)
+       + P(R=F)P(S=F|R=F)P(G=T|!S,!R)
+       = 0.44838
+
+P(R=T|G=W) = P(R=T)P(G=W|R=T)/P(G=W)
+           = 0.2 * (0.8+0.99) / 0.44838
+           = 0.813636364
+
+blairs method = P(R=T,G=T)/P(G=T)
+              = [P(R=T,S=T, G=T)+P(R=F,S=T,G=T)]/P(G=T)
+              = 0.00198+0.15840/0.44838
+              = 0.16038 / 0.44838
+              = 0.357687676
+
+probability that the grass is wet according to the chart:
+
+.00198+.15840+.288+0=0.44838
+
+----------------------------------
+here comes the next question
+
+if he took the hose and wet the grass, what is the probability that it is raining?
+
+we might think it was 0.2.  since we cant make it rain by wetting the grass.
+
+
+
+//common sense is the metaphysics something.
+the valuable results in science are the results that tell us our intuition is wrong.  and force us to retrain our intuitions.
+
+
+
+how does the apparatus tell us this?  there is a nottation for this.
+
+P(R=T|do G=T)
+
+this means that we force G to be true having nothing to do with the existing network.
+
+how do we model that?
+
+if i go and make the grass wet, what i am doing is altering the network.
+
+it removes the link between rain and grass and between sprinkler and grass.  we have a new table for grass wet.  this creates a new baysean network.
+
+and this new network shows that wet grass does not affect rain.
+
+Rain --> Sprinkler
+Grass Wet
+
+how can we extend this to a total ordering given R \below S? how many different ways.
+
+R \below G \below S
+G \below R \below S
+R \below S \below G - WRONG
+
+you have to keep R below S, but then order the source nodes as you please.  the latter one is useless to do so.  the purpose of the ordering is to simplify the conditional probabilities.  it would make both dependent on G or something.
+
+P(X|Y1,Y2,Y3) all the ways are ancestors of X and you can strike out the ones that are not immediate parents.
+
+
+
+sometimes the errata of a book turns out to be thicker than the book, even for really smart dudes.
+

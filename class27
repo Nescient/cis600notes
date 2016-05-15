@@ -1,0 +1,170 @@
+# Mon May 02 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+computation reputation based shopping prediciton model
+neepah
+
+reputation and social network analysis
+
+commerce sociology psychology
+
+repuation is "the common or general estimate of a person with respect to character or other qualities"
+
+mathematical/computation model fo rmeasurement of repuation in social networks with a regret system model.
+while all previous models consider reputation as a single concept
+
+
+
+if repuation increase, trust increase
+if trust increase, reciprocity inrease
+if reciprocity increase reputation incrase
+
+reciprocity: mutual exchange of deeds.
+
+social ReGreT model
+
+an experimentation tool where the repuation ofn the participating agestns
+
+showed socioram.
+
+based on three dimensions of repuataiotn 
+
+idnidviidual dimenion single
+social dimension multiple
+ontological dimension:  witness reputation, neighborhood.
+
+a bunch of different methods used to do reputation computation.
+
+----------------------------
+jennifang que?
+junfeng que
+
+two approaches to the study of artifical intelligence
+(behavior and knowledge based)
+
+behavior:
+bottom-up, machine can think rationally
+
+knowlege-based:  top-down, machine can act ractionally
+
+both attempt to model intelligent phenomna
+(goal directioned pbeheavoir, prediction, learning, communication, cooperation)
+
+
+##kowldnedge-based ai
+*model the domain and cna answer question about this question domain
+**often involging extensive problem solbing and reasoning
+ie, siri, mobile robot
+
+goal:
+rather depth than width
+no direct interaction with the problem domain about which they encode knowlddge and solve problems
+one problem at a time, does not deal with interrupts
+static knowlege structures
+the perception module and the execution module
+
+##behavior based ai
+appropriate for the clas of prolbems that require a system to autonomously fiulfill severlal goals in a dynamic unpredictable enbiroment
+autonomous vehicles
+goals:
+multiple lower level (as opposed to expert level) integrated competences
+locomotion, navigation, collecting
+it is directly connectd to its problem domain through sensors and effectors
+its problem domain is typically dynamic. "open" in its environment.
+autonomy/self-contained
+adaptation and developmental approach.
+
+----
+solutions investigated by knowledge based ai
+*modular decomposition
+** functional modules (indpeendnetly, rely on central representation)
+*approach
+**the same functional componetns can be used for different problem domains
+** expect the central representation
+* role of representation
+** complete, correct
+*organization:  different modules within th esystem is sequential
+* model of activity
+** activity is modeled purely as the result of a deliberative thinking process
+
+problems of behavior based ai
+* the reuslting systems can be slow
+** sequential processsing of information and the high computational cost
+* the resulting systems can be inflexible
+* the systems tend to be brittle
+*in practice it proves to be hard to relate the symbols in the internal model to physicall stimuli
+** sensor data are ambiguous, erroneous, inconsistent
+
+solutions investigated by behavior based ai
+* modular decomposition
+** each modules is directly connected to relevant senors and actuators
+**communication between modules:  one to one basis
+*approach
+**no general or task-independent modules
+*role of representation
+**no central representation
+*organization: all of the competence modules operate in parallel
+*model of activity: not modelle as the reusult of a deliberative process
+
+eamples:
+*a mobile robot
+*siri
+*alpha go
+*autonomous vehicles
+
+joseki - starting go configurations
+
+------------------------------------------------------------
+a deep learning approach for relationship extraction from interaction context in social manufacturing paradigm
+han li
+
+the title is a paper written by professor blair
+
+## motivation
+"we are specialized in rapid prototyping"
+
+
+## overview of problems
+
+
+#assumptions
+distributional hypothesis theory: words used in the same context tend to have similar meaning
+misc is the context that records modments and events:
+
+#natuaral language process (nlp)
+
+
+
+## input data vectors
+
+##
+
+
+
+sdae based deep learning neural network model
+stacked denoising auto-encoder (sdae)
+
+artificial neural network
+f(x) = 1/(1+e^-x)
+t=f(WA^T+b)  // this might not be right for the types
+
+multilayer feedforward neural network
+each neuron in one layer has directed connections ot hte neurons of the subsequent layer
+
+backpropagation algorithm
+cross-entropy (measure the loss)
+
+the meothod calculates the gradient of a loss function iwth respect to all the weights in the network
+
+unsupervised vs supervised learning
+
+denoising is in order to force the hidden layer to discover more robust features and prevent it from simpley learning the identity
+
+jiewu leng pingyu jiang did the paper
+
+------------------------------------------------------------------
+the term "deep learning" comes from an effect in human beings.  illustrated by an example at uc berkley.  in a general education physics lab requirement.  what htey did in the year, the students took an assestment at the beginning of hte year to asses how they see the physical world and then did the year course and another assessment exam to see how they conceptualize the world.  at the beginning, students had faux physics.  simple model?  airostoles physics.  after reassement, they got the same results.  it did not correlate with grades.  they interviewed the students and asked them why they answered homeworks in contradiction to the assement exam and students would come up with crazy elaborate rube goldburg ways of how they might get the answers.  they were treating the course material as a game that they had to play to get good grades, but not as factual information for them to learn.  this is called shallow learning.  deep learning is when learning something causes your internal conscepts and beliefs to change.
+
+4=201 at 9 oclock.  cst

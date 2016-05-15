@@ -1,0 +1,191 @@
+# Wed Feb 17 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+see image for binary tree.  assume 1,0 are from fair coin toss (random).
+
+doing something like flipping a coin is an example of a statistical experiment.
+
+a compound experiment of three statistical experiments of tossing the coin three times and see the result.
+
+the probability that it would be tails, heads, heads, is 1/8.  how do you know that all 2^3 outcomes are equally likely?
+
+if he has a fair coin and tosses it three times, what happens on the second outcome might be influenced on the first toss.  what might cause that to be the case?  i am assuming that there is no probably influence between the first toss and the second toss.  declaire that the probabiliyof the second toss is not dependent on hte past or the future.
+
+you have three different experiments that you make a compount experiment.
+
+lets start off with:  sample space = probability space.
+
+https://en.wikipedia.org/wiki/Probability_space
+
+you have a probability space (S1) for the first toss:
+S_1 : Exp #1 -> S1 = { T1, H1 }
+S_2 : Exp #2 -> S2 = {T2, H2}
+S_3 : Exp #3 -> S3 = {T3,H3}
+
+you make them probability spaces by pairing them with probability distributions.
+
+right now we just have sets.  we havent assigned probability distributions yet.
+
+so prob(T_i) = prob(H_i) = 1/2.
+
+what is statistical independence?
+https://en.wikipedia.org/wiki/Independence_%28probability_theory%29
+
+given a box on the wall, throwing a dart at it has equal probability that it hits anything in the box, but it must hit something in the box.  probability that it will hit something in the box is 1.  (image#2)
+
+cursive S is a collection of subsets:  \ess is a super setof the power setof S.  it is the set of all subsets.
+https://en.wikipedia.org/wiki/Power_set
+
+\ess \c.underline P(S)
+
+(S, \ess, Pr) <- measureable sets
+
+A is measureable implies that the probability of A (the measure of A) is an element of the set of real numbers between 0 and 1, inclusively.
+
+A is measureable -> Pr(A) \epsilon { x \epsilon R | 0 \le x \le 1 }
+
+S \eps \ess
+
+Pr(S) = 1
+
+Pr(\emptyset) = 0
+
+events are measureable subsets.
+
+how do you get the probability of the subset.  these measureable sets are called events.
+
+https://en.wikipedia.org/wiki/Non-measurable_set
+
+
+conditional probability:
+P(A|B) = P(A \intersect B) / P(B)
+
+what proportion is the intersection of b?
+
+what is the area of the overlapping circles compared to the area of B.
+
+P(A|B) <-- think of this as a percentage of the area of B.  for that, we want to blow up the area of B until it is 1.  how do we get he probability of B to one?  Well, P(B) * 1/(P(B)) = 1.  the factor to move it up is 1/P(B).
+
+what is the area of the intersection?  P(A ^ B).  now multiply by the factor and you get P(A^B)/P(B)
+
+in other words:
+
+look at an interval, say a line segment.  take a subsection of it and call it A and another subsection and call it B, where they overlap:
+
+|--------[---{--]----}--------------|
+         [  A ]{  B  } 
+
+what is the {--] amount as a percentage of the {--} amount?
+
+when P(A) = P(A|B), A is statistically independent of B.
+
+this means that P(A^B)/P(B) = P(A), therefore P(A)*P(B) = P(A^B) = P(A|B) (WHEN STATISTICALLY INDEPENDENT)
+
+there is nothing in the apparatus of statistical independence to ask questions across sample spaces.
+
+-------------
+
+lets keep track of each result as a set of triples:
+(T1, T2, T3)
+(T1, T2, H3)
+(T1, H2, T3)
+(T1, H2, H3)
+....
+(H1, H2, H3)
+
+to make them, it is S1 X S2 X S3.  what in this space is the event of getting tails on the first toss, or a heads on the second toss, so forth?
+
+take the Probability Space:
+S1 X S2
+
+if you have a probability distribution of S1 and S2, how do you get a probability distribution of S1 X S2?
+you use the product measure.
+https://en.wikipedia.org/wiki/Product_measure
+
+
+   S2
+   |*           * (H1, H2)
+   |
+   |
+   |
+   |*           * (H1, T2)
+ ------------------  S1
+
+The poitns are (T1, H2), (T1, T2), etc
+
+what is the event of getting tails on the first toss?  it is the S2 vertical line (where S1 is tails)
+what is the event of getting heads on the second toss, it is the top two dots.
+
+to get tails on the first one and heads on the second one, it is the intersection of the things above.
+
+is is the probabilit of the {(T1, T2), (T1, H2)} times prob of {(T1, H2), (H1, H2)}.
+
+P(A^B)=P(A)*P(B)
+
+|-------|-------|
+    T1      H1
+
+assume there is a demon in the coin that takes a number between 0 and 1 and if it is less than .5 is will be heads and more will be tails.  perfectly.
+
+\aside{what would you do if you flipped the coin and it landed on the side?}
+
+turn the above line into a square:
+
+|-------|--------|
+|H2T1   |  H2H1  |
+|-------|--------|
+|T2T1   |  T2H1  |
+|----------------|
+
+take the area of those rectangles to get teh probability of each.  this is why we take the product measure.
+
+-----------------
+what about an unfair coin?
+tails is 3/4 and heads is 1/4.
+
+what is the probability of two tails?  3/4 * 3/4 = 9/16.  tails then heads = 3/16.  heads then tails is 3/16. tails then tails is 1/16.
+
+-----------------------------------------------------------------------------------------------------
+
+when we set up shannons entropy, you have a bunch of events that are said to be independent and they have probabilities.  the entropy must be independent of the events themselves and only determined by the probabilities of the events.  given these events are statistically independent, 
+
+we postulated that I(E1^E2) = I(P1*P2) = I(P1)+I(P2)
+
+suppose that these events are disjoint events.
+
+does the probability distribution on those events have a shannon entropy?
+
+shannon entropy is a function of probability distribution.  there is an assumption that there are independent events underlying these things.  disjoint events have no intersection.  the probability that they will both happen is 0 and the probability of them seperately is not zero, so they are not statistically indepdent.
+
+the cunumdrium:  shannons entropy is a function of the probability and there is an assumption of the underlying events being independent of each other.
+
+---------------
+
+take a coin as T, H where T = 3/4 and H = 1/4
+shannons entropy = - (3/4log2(3/4)+1/4(log(1/4)))
+what is the underlying events.  they are disjoint!!!  they cannot both occur.  we cannot use shannons entropy?
+
+
+where is an inuition behind entropy:  you ahve a box and use a vaccum, yhou build a little subbox inside the box. and you put a pump in the little subbox and it takes all the air out of the big box and holds it in the little box.
+
+think of all the configurations of the air in the whole box.  it is very unlikely that you will find hte configuration of the air after the air has been removed.  the overwheling likelyhood is that most are in the smaller box.
+
+if yo urelease the vaccum they will flood back inot the larger box and any of the configurations could be found.  the latter state where the air is spread out is supposed to represent higher entropy.  the expected number of questions to figure out the configuration for the air has gone way up compared to the vaccumm state.
+
+-------------------------
+depending on how the probability tree is set up, it might be more beneficial if you ask about the bits in different order.
+
+is there an optimal strategy that gets arbitrarily close to the shannons entropy?
+
+---------
+famous logiscian at cornel named gerold sacks
+https://en.wikipedia.org/wiki/Gerald_Sacks
+
+he would finish right at the exact moment when he was scheduled to end.
+
+
+george gobal (cobal?)
+https://en.wikipedia.org/wiki/George_Gobel
+
+he looked like another mathematitian.  the math dude had drink problem. solved a big problem completely differerent than what sacks was working on.

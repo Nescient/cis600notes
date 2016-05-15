@@ -1,0 +1,251 @@
+# Mon Feb 15 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+if you look at the polynominal wiht the cosine wrapper.  the collection of all such polynominals are called the paremtetric rule space.
+
+
+say:
+a_1 + a_2u + a_3x + a_4v + a_5ux + a_6uv + a_7xv + a_8uxv
+
+8 dimensional rule space.
+
+why is it 8 dimensional space?
+
+vector of values:
+[ a_1 ]
+[ a_2 ]
+[ a_3 ]
+[ ... ]
+
+
+affine subspace?
+https://en.wikipedia.org/wiki/Affine_space
+
+from:
+
+static double poly(double u, double x, double v)
+  {
+     return binarize(
+      // 0.5 - 0.5*Math.cos(Pi*(a + (a+b)*u + (a-b)*v + b*u*v - 2*u*x*v))
+         0.5 - 0.5*Math.cos(Pi*(x + v - x*v - u*x*v))
+
+                    );
+  }
+
+a_1 = a
+a_2u = a+b
+a_3x = 0 + 
+a_4v = a-b 
+a_5ux = 0
+a_6uv = b
+a_7xv = 0
+a_8uxv = -2
+
+[ a ]
+[a+b]
+[0  ]
+[a-b]
+[0  ]
+[b  ]
+[0  ]
+[-2 ]
+
+this is what we do now:  map the point [ a ]
+                                       [ b ]
+
+this is a two dimensional real space and the standard basis is
+[1] and [0]
+[0]     [1]
+
+[1 ]       [0]
+[1 ]       [1]
+[0 ]       [0]
+[1 ]       [-1]
+[0 ]       [0]
+[0 ]       [1]
+[0 ]       [0]
+[-2]       [-2]
+
+this is a times the first vector and b times the second vector
+add the two vectors to get a point in that space
+
+can you make something that makes artificial life?
+
+how do you quantify that:
+
+you have to disturb the value you get from your transition rule.  probably less than 1/5000.  or .0002.
+
+do the structures that self organize reform?  do they have homeostasis?
+
+he did 1/512 change every 10th generation and the stuff reformed.
+
+
+------------
+first thing:  do entropy calculation for each a,b as they vary between -1 and 1.  you have to sample it:
+
+do 40k entropy calculations.  divide each interval from -1 to 0 to 1 into.
+
+a varies from -1 to 1 and vary by 0.001.
+
+to map a colored line from 0 to 1, you could make it grayscale. just find something that looks good and conveys the information.
+
+--------------------------------------------------------------------
+homework:
+calculate the entropy for each polynominal you get where teh coefficients are of the vector form where you vary a and b between -1 and 1 by 0.001.
+
+try to calculate a straight line through the origin that hits interesting entropy and then calculate the leopinov exponent and fine ones near zero or something else.
+
+----------------------
+there was a logiscian who refused to serve as a referee after a while.  the referees look at papers coming into a journal and they have to verify it is correct, significant, and new material.
+
+usually you get the paper back and it will be accepted dependent on the changes you have to make.  tarsky would every once in a while get a paper and the principle purpose of a referee was to verify the correctness would take two years.  when blair was in college it would take 3-6 months to get it back for conferences.  notification was a 1 or 2 months before the conference.
+
+jounals would be 12-18 months.  now the turn around is 6-12 weeks.
+
+
+
+with rule 110, we have:
+
+a1 = 0
+a2 = 0
+a3 = 1
+a4 = 1
+a5 = 0
+a6 = 0
+a7 = -1
+a8 = -1
+
+
+the values are not going to be 0,1 values.  rule 110 there were only 8 possible variations.  for this, partition this or something.  you need to play with it to figure out how to get the counts of each values.
+
+-----------------------------------------------------------------------
+
+the intuition behind shannon entropy si to ask what is the expected value.
+
+how many yes, no questions do you have to ask to determine the value of your random variable.
+
+consider the following:
+
+(a full infinite binary tree)
+
+\aside
+suppose we consider the unit interval:
+{x \epsilon \reals | 0 \lteq x \lteq 1 }
+
+how many different ways can we put translation invariant probability measures on this space?
+
+imagine the number line:
+
+|------------------------------->R
+              |            |
+              0            1
+
+Imagine the length (one dimensional area) of a line
+
+take numbers between and what is the length between 1/3 and 2/3?  it is 1/3
+
+image taking a sumbset 0->1/3 and 2/3->1 without the middle.
+
+each is 1/3 and together they are 2/3s.
+
+this is the measure.
+
+every one of these intervals is the same:
+
+a  b
+(  )
+(  ]
+[  )
+[  ]
+
+take out the middle third again of each of the two spaces:
+
+now we have 4/9s.  do it again and take out 1/3 of whats left.
+
+what is the pattern?
+
+
+the first time the whole is split to 2 pices then split to 4 then split to 8.  each piece is 1/(a power of three)
+this gives us:
+2^n/3^n = (2/3)^n
+
+as n -> \infinity, the limit is 0
+
+but, perhaps we could find a different measure that has more interesting properties.
+
+even if you did this to infinite, there would be points left (we would never loose 0, 1, 1/3, 2/3 for example).  what is left, is every point that in base 3 looks like 0, t_1, t_2, ...t_n where each t_i is {0,2}.
+
+(base 3 is trit expansion)
+
+that each t is either 0 or 2 leads to a binary tree representation where each path is either 0 or 2.
+
+0.022222222222... is take the first 0 then keep taking 2s
+this is 2/9 + 2/27 + 2/81 + ....
+
+solve for x where x = 0.02222222222...
+
+3x = 0.222222222222222222...
+2x = 0.2
+
+x = 2/3
+
+
+x = \sum \from i=1 \to \inf of t_i(1/3)^i
+
+what if you gradually let the 1/3 aproach 1/2 continuously.  what do youget then?
+
+change the binary tree to be 0,1 instead of 0,2
+
+b_i = { 0, if t_i > 0 }
+      { 1, if t_i = 2 }
+
+\sum \from i=0 \to \inf of b_i(1/2)^i
+
+
+this has the effect of instead of picking out 1/3 you pick smaller and smaller intervals until you get to 1/2 and now you are picking out nothing.
+
+if you stop this process right before you get to 1/2, then area of what you are taking then is still 0.  but if you craft what you take out carefully, you can make the area you have left anything between 0 and 2/3s.
+
+something about the paths through the binary tree converge to something.  the point you converge to is called a diatic fraction of the form:
+
+m/2^n
+https://en.wikipedia.org/wiki/Dyadic_rational
+
+dyadic fractions have two ways to approximate tehm.
+
+and event is a subset of a probability space.
+
+how do we assign probability to an infinite number of points?  area is the way we do that.  but not everything has an area.  (axium of choice)
+
+we will confine ourselves to events that are subsets of hte unit interval that have defined length (one dimensional area).  how are we goin to come up to that?
+
+we can express them as paths in our infinite binary tree.
+
+if we make the whole tree measure 1, then the ones that go tot he left would be 1/2 and the ones that go to the right would be 1/2.  and then we keep breaking it down.
+
+so we get 1/4, 1/8, 1/16, etc depending onwhich vertex we are looking at.
+
+how do we extend that notion of size measure?
+
+they will have size of 1/2^n.
+
+we find our sets and then close them up under different rules like addition or subtraction or something.
+
+what counts as continuity?
+
+one of the things we need to know is how to continuously map in the right way.
+
+
+the cantor set.
+https://en.wikipedia.org/wiki/Cantor_set
+
+topological spaces?
+
+cantor topology.
+
+next time:
+what if we have a biased point and the probability is 3/4 head and 1/4 tails.  we can break the binary tree up to hold this.
+
+what you are left with is that the numbers dont match.  waht is going on?

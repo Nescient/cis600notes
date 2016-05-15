@@ -1,0 +1,220 @@
+# Mon Apr 18 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+he is going to talk about a matter of intellegence, both natural and machine.  none of us know what we are talking about.  not just intellegence, but more or less anything.
+
+stanford encyclopedia of philosophy
+
+Quine Indeterminancy
+https://en.wikipedia.org/wiki/Indeterminacy_of_translation
+
+https://en.wikipedia.org/wiki/Word_and_Object
+Word and Object
+Ontological Relativity
+
+philosophy is kind of vague.  everything is vague, but this is more vague than mathematics.
+
+\naturalnumbers ->  \N
+
+\N = {0, 1, 2, 3, 4, ...}
+
+the problem is with the elipsis.  we want to define these things.  and state how they add and multiply and such.
+
+How to define \N?
+
+he will give us two approaches to defining this.  NOPE, lets call it an attempt at a definition.
+
+There is an element 0.  0 \elementof \N
+If n \elementof \N, then successor(n) \elementof \N
+
+he could have just as easily called successor a flibble.  and for all you know that could be your shoelace.
+
+successor(n) is some function of n.  (lets call it s(n))
+
+it has these rules:
+
+#1.  \not \exists y [s(y) = 0]  // there is not element where 0 is the successor of it
+
+#2.  \forall x \forall y [s(x)=s(y)->x=y]  // if the output is the same for two inputs, the inputs are equal
+
+#3.  \forall n [n+0=n]
+
+#4.  \forall n \forall m [n+s(m)=s(n+m)]
+
+$5.  \forall n [n*0=0]
+
+#6.  \forall n \forall m [n*s(m)=n*m+n]
+
+DELETE:  #7. (should have been the second one) \forall n \not [ n = s(n) ]
+
+https://en.wikipedia.org/wiki/Peano_axioms
+
+he things there should be one more.  #7.  he cannot remember it.
+
+https://en.wikipedia.org/wiki/Robinson_arithmetic
+
+robinson axioms
+
+you can represent every possible compuation into a forumla that you can prove from these axioms.
+
+given all of this, this is omething you cannot prove:
+
+\forall x \forall y [x+y=y+x]
+\forall x [0+x=x]
+
+from these axioms
+
+this shows us that computation does not require these latter two rules.
+
+if you want to reduce mathematical stuff you need these extra axioms.
+
+basic exercise for mathematical induction:
+
+proove 0 + 1 + ... + n = 1/2 n(n+1)
+
+if we are okay with sets, then we can write a single induction algorithm.
+
+\forall n \forall S [ 0 \element S ^ \forall n [n \element S -> s(n) + S ] ] -> \N \subset S
+^
+
+// ^-- IGNORE THAT
+
+S \subset \N ^ [ 0 \element S ^ \forall n [n \element S -> s(n) + S ] ] -> \N = S
+
+all of this comes from Peano or something
+
+\forall S [S \subset \N ^ [ 0 \element S ^ \forall n [n \element S -> s(n) + S ] ] -> \N = S]
+
+we want this to be true for all S
+
+to understand this we have to know what is or what isnt a subset of the natural numbers.
+
+-------------
+
+A, a formula in the lnaguage of arthmetic.
+
+\aside{
+
+what is a formula in the language of arthmetic?
+
+x|y <--> \foreach z [x*z=y]
+
+\forall x [x|y->(x=s(0)Vx=y)] ^ \not(y=0) // <--- A(n)
+
+this is an example of a forumla in the language of arthmetic
+
+| is divides (if x divides y)
+
+this formula, when interpreted on the natural numbers says that y is prime
+}
+
+A(0) ^ \forall n [A(n)->A(s(n))]-> \forall n A(n)
+
+if you have a free variable in the function, you can have induction or something to give you all the axioms (infinite axioms)
+
+[This sentence is false.]
+
+is it true or false?  the way out is to say it looks like a sentence, but it is not.  
+
+colorless green ideas sleep furiously
+
+this is a type error for literal renditions
+
+https://en.wikipedia.org/wiki/Antinomy
+
+https://en.wikipedia.org/wiki/Epimenides_paradox
+
+all cretians are liars
+
+you can find an example of one that tells the truth and this is now false.
+
+but suppose that epimenides was the only cretian.  and suppose it was the only thing he ever said.  if this is the case, then we are in the same situation as the antinomy liar.
+
+wether epimenides detnotes a propositoin depends on how the world is.
+
+now we make a simple change:
+
+[This sentence is not provable.]
+
+suppose it is true.  then it is not provable, but it is true.
+suppose it is false.  then it is false and you can prove it.
+
+you can prove lots of things are false if your proof system allows it.  it turns out that you can code up the sentence in the language of arithmatic.
+
+way back in 1978, german adward wette.  he thought that mathematics was inconsistent and he could prove things that are false.
+
+if you can code it in arthimatic, make the system more powerful to prove it and you change the meaning of the word provable.
+
+any system at least as powerful as robinsons axioms cannot prove its own consistency.  and the more power you put in it, the harder it gets to prove its own consistency.
+
+we cannot write down a system of axioms that uniquely determine the structure of what is true or something.
+
+you simply take them as axioms.
+
+so you now say that you take all functions that are true about the natural numbers are axioms.  now this will pin down the natural numbers!!!  nope.  heres why.
+
+
+there is a book on game theory.  say you start getting communication from outer space and we start interacting with them.  how do we know if they are superior beings?  the book is called superior beings.
+
+https://en.wikipedia.org/wiki/Superior_Beings
+https://books.google.com/books?id=tKh_BwAAQBAJ&pg=PA2&lpg=PA2&dq=superior+being+game+theory&source=bl&ots=VRJ_h2uKra&sig=FHu7CWYzoNxeRtedRqljDxSOxRQ&hl=en&sa=X&ved=0ahUKEwjvn7vEhZnMAhXIcz4KHUh4D3oQ6AEIODAE#v=onepage&q=superior%20being%20game%20theory&f=false
+
+
+as long as proofs are finite, then logic has a compactness property.  if every finite part of the premis something something
+
+
+in any given argument, you can only use finitely many premisis.
+
+the completeness theorum.
+https://en.wikipedia.org/wiki/G%C3%B6del's_completeness_theorem
+
+every consistent set of formulas has a model of finite something
+
+david hilbert was giving a key note saying we should be able to make a mechanical thing to determine if any given mathematical thing is true or false
+https://en.wikipedia.org/wiki/David_Hilbert
+
+hilbert was right in that if it could be done, we know enough to do it.  there was nothing left out.  left to know.  what we know about logic is adiquat.
+
+
+someone foxx
+science is about workarounds
+
+----------------------------------
+
+throw in a new constant symbol
+
+x > y <-> \exist z [x=y+s(z)]
+
+called an extension by definition
+
+c > 0
+c > s(0)
+c > s(s(0))
+....
+
+also take all the axioms that are
+true formulas in the language of arithmetic
+
+is this whole mess consistent?
+
+if it is inconsistent, some finite part of it is inconsistent.
+
+which means somewhere in the c.... is becomes inconsistent and you can draw a line where the stuff below is inconsistent and everything above is consistent.
+
+but, all the way down no matter where the line is drawn you cant say one part of it is consistent.  i dont really follow this....
+
+
+no matter how much larger you make the language, you can always make a new structure that is larger than that.  as soon as you freeze the language, there will be strucutres that you cannot tell apart.
+
+a problem in physics, everything ou can say rigourously, youre really referring to a mathematical model that is supposed to represent reality.  if you ahve a complete model, you cant distinguish between the model and reality.
+
+------------
+mark twain used to say he was superior to george warshingington because he could tell a lie but he chose not to (whereas george warshington could not tell a lie)
+
+-------------------------------------------------------
+
+who would like to volunteer to give the first presentation next monday.
+
+2 each class, if possible to do 3.
+

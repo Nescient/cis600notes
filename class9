@@ -1,0 +1,133 @@
+# Mon Feb 22 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+what we are looking for is places where we can closely look at leoponov exponents.  the hueristic we want to look at and extend is:
+
+when the leoponov exponent is changing realatively slowly and near zero that is where you will find a great deal of variariety in the ca.
+
+because the evolution is dependent on adjacent columns, when you have a negative leoponov eponent, that is slightly less than 0, you have a tendancy to form attractors.  but when you have columns a little away from each toher, but now they are competing and where yo uahve interesting activity is the in the boundaries between attractors and attractor basis.
+
+can we get computational verification of that fact?
+
+he wants to say a little something about probability:
+
+the thing about probability is that it is a ratio.  he finds this useful.
+
+!! Probability is a part-to-whole ratio. !!
+
+not everyone would agree with this:
+he has no particular ideology and no partifuclar metaphysical point of view.  he is very much for the idea of solving problems any way you can.  some people want to show that a particular methodology is good for solving problems without caring about the methods.
+
+Prob(A|B) is the ratio of the area where the circles cross to some reference point, B:
+
+this is why the answer is Prob(A^B)/Prob(B).  end of story.
+
+----------------------------------------------
+
+next assignment is to play with leoponov exponent.  to calculate them.  also redo the calculation from 0 to 2.
+
+throw away the transients (three to five hundred iterations).  then go to about 2000.
+
+one of the most important algorithms that is becoming is called gradient descient.
+https://en.wikipedia.org/wiki/Gradient_descent
+
+imagine a skiier that is blind that needs to get down the mountain back to the lodge.  he tries different ways to see wihch is the steepest.  so he goes the steepest way and hten gos and eventually gets on tarrain that is not the steepest so he checks again and corrects his course.
+
+get teh chaos and fractals book on page 690 pdf to see how to do the leoponov exponent.  this is computationally expensive.
+
+there is a trick:  take the norm of the point.
+
+square of the something of all 400 points in the row.
+
+the derivative of a function from 400 space to 400 space is at a given point a linear function from 400 space to 400 space and the slop of that function is different in different directions.  you can find the slop realative to the axis.  the gecobian matrix gives you the slope realative to an axis.
+https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant
+
+either one of peitgen's algorithms:  either the estimation approach or the exact approach.
+
+standard euclidian norm of the point
+https://en.wikipedia.org/wiki/Euclidean_distance
+https://en.wikipedia.org/wiki/Norm_(mathematics)
+
+
+basis of attraction
+
+he showed us a bunch of images and then explained them.
+
+-------------------------
+
+ax(1-x)=f(x)
+
+pick a random a between 0 and 4 and then keep iterating it adn it will rapidly converge to a value or something
+
+how does the number converged to change as a changes?
+
+he showed the picture and explained it.
+
+think of a night light with a sensor that turns on if it is lit.  hold it up to a mirror and you will see it blinks.  as you move it out, the blink frequency wont change.  when you move it closer, it will change!  and you will be able to tell the frequency change.
+
+this particular phenoninom was first seen on steam governers on locomotives.
+sticking out of the top of a locomotive was a rod that spun with teh steam turbine and there were weights hanging off it with a hing so they could move up and down and was mounted to a slidder so that as it spun faster, the cirtrificlal affect to spin out.  the slider slid up and down based on the speed of the turnning of that rod.  connceted to the slider were rods that would raise or lower the boiler cap or something.  you woul dhave to have a balance so that the engineer could set the trhrottle at the right spot and keep the engine at a speed.
+but, you could overdrive the boiler by feeding more coal in.  and if you overdrove the governour, what would happen is that it would occliate at a certain point.  this frequency would double and keep going until a certain point it would just get chaotic.
+
+at some point, after overdriving a, you get a nice 3 cycle point.  this is important.
+
+see image https://en.wikipedia.org/wiki/File:LogisticMap_BifurcationDiagram.png
+
+poincare was looking at this stuff
+https://en.wikipedia.org/wiki/Henri_Poincar%C3%A9
+
+https://en.wikipedia.org/wiki/Feigenbaum_constants
+
+
+http://carlosreynoso.com.ar/archivos/peitgen.pdf
+page 652
+what is the ratio between when these doubllings happen?
+from the first to the second, second to the third, etc.
+these ratios converge to feigenbaums constant.
+
+this doubllign effect popping up in different functions.  feigenbaum constant
+
+swartzian darivative
+https://en.wikipedia.org/wiki/Schwarzian_derivative
+
+feignebaum sitting in his office playing with a calculator hitting sin over and over again and he ralized something aobut it doubling.
+
+mattle lebrotts
+https://en.wikipedia.org/wiki/Mandelbrot_set
+
+https://en.wikipedia.org/wiki/Julia_set
+
+these two sets are opposites or osmething.
+
+the julia set is the attractor.  the boundries produce fractals.
+https://en.wikipedia.org/wiki/File:Julia-set_N_z3-1.png
+
+jo4 image:
+the more image the exponent, the more stable.  where it is darker it is further away from zero.  the darker in the gold area, the more stable it is.
+
+nonlinear dynamics.
+
+-----------
+one more thing to show us having to do with gradiant discent:
+
+
+it would be good to plot the color as the a, b changes so that there is no gaps and so that there is not a significant change when entropy changes.
+
+----
+
+take some function and iterate it.  some of these have fixed points.  the basis of the fixed points forms a checkered parabola circle thing.  this shows gradiant discent.
+
+the fibannaci numbers and the golden ratio are in there or something.
+
+the big discovery in the recent years in artifical intellegence is that there are various ways to represent artifical intellegent tasks as gradient discent.  gradient discent methods are becoming a boom.  they are emergeing as the most important algorithm.
+
+natral language transformation;
+google translation does a very good job now a days.  what they discovered was
+
+was there a breakthrough in linguistics?  no, they threw linguistics out.  they took the canadian parlament and its thing comes out in french and english so they swallowed these records for many many years and statistical correlation between the words.
+
+the discoverted they could use that data to doi it.  where they are in the sentences.
+
+growing movement in human psychology that maybe that is all our mind is doing.  gradient descent is important for this.

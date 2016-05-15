@@ -1,0 +1,216 @@
+# Wed Apr 20 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+last time we talked about inherent ambiguity.  in logics, there is an inherent ambiguity in most things.  today he will show us another construction that reinforces that concept.
+
+there is an applied/embedded research project about how one might find some workaround in which you might compute some structure.
+
+we are in the bussiness of applied science of finding workarounds.
+
+this will be kind of mathematical.
+
+--------
+
+supposed I have a nonempty set S
+
+take a look at the power set of S (\P^S)
+
+\P^S = { A | A \subset S }
+
+(the set of all subsets of S)
+
+take \F \lteq \P^S  [also let 2^S be the power set as well]
+
+where 
+
+1. \emptyset \not \elementof \F
+2. A, B \element \F -> A ^ B \element \F (closed under --finite-- pairwise intersection)
+3. A \element \F, A \subset B \subset S -> B \element \F (closed under reverse-inclusion)
+
+\aside{
+	b \element B = b is contained in B
+	A \subset B = A is included in B
+}
+
+EXAMPLE
+
+take S = {a,b,c}
+
+drew a cube.  the hypercube.
+
+{{a,b,c}}
+
+some corners cannot be taken if you want to satisfy the 3 proerties above.
+
+proper filter
+https://en.wikipedia.org/wiki/Filter_%28mathematics%29
+
+principal filters are "not too interesting"
+
+drew number line:
+
+<-------------------|------------------>
+
+and added an interval:
+
+<-------------------|-------( . )--------->
+                    0         x
+
+\F = { A \subset \R | there are some a, b \element \R     }
+                    | such that a<x<b, and (a,b) \subset A}
+
+some other stuff.  stop doing notes to try and understand his examples.
+
+look up proper filters or something.
+
+\N = natural numbers
+
+A \subset \N is cofinite iff \N-A is finite
+
+A \subset B
+A\bar is finite
+B\bar \subset A\bar
+
+still dont understand it
+
+---------------------------------------------------------------------
+
+\F is a filter (that is proper)
+
+if a filter is not maximal, there will be a set you can add to it and it will still be a filter.
+
+if you have a set that is not in the filter, either:
+1. it has non-empty intersection wiht every set in that filter
+2. or its compliment is in the filter
+
+suppose A \not \elementof \F
+
+if A does not have not empty intersection with set in \F, then for some B \element \F then A ^ B = \emptyset
+
+what about A compliment (A\bar)?
+
+thus B \subset A\bar
+
+it follows that if you have a maximal filter, every nonempty subset of S will either be in that maximal filter or its compliment will be.
+
+if its maximal, you cannot add anything to it and it already has everything thats not an emptyset, so everything is already in it except for their compliments.
+
+maximal filters go across the power set and take everything or its compliment.
+
+------------------------------------
+
+https://en.wikipedia.org/wiki/Equivalence_relation
+
+imagine an infite array indexed from 0 containing natural numbers.
+
+\aside{
+	the difference between a sequence and an array is that you can compute the nth value of a sequence in constant time.
+
+	if the access of the array is dependent on the size of the array, then something something.
+}
+
+\F, maximal nonprincipal filter
+
+\aside{any maximal filter on \N must contain all cofinite subsets of \N}
+
+let <n_i> be a sequence of values from i=0 to so-on
+
+<n_i> ~ <m_i> iff {i|n_i=m_i} \element \F
+
+reflexive is that \N is the set above
+
+that is, <n_i> ~ <n_i>
+
+symmetric is <m_i>~<n_i>
+
+transativity
+
+<m_i>~<n_i> AND <n_i>~<k_i> THEN <m_i>~<k_i>
+
+{i|m_i=n_i} \element \F
+{i|n_i=k_i} \element \F
+
+so
+
+{i|m_i=k_i} \element \F
+
+because something about the intersection is in the filter
+
+he got an equivalence relationship without using maximality.
+
+--
+take the natural numbers crossed an inifinite many times
+
+\N X \N X \N X ....
+
+this would cause infinitly long tuples.
+
+this is a sequence.
+
+missed something
+
+given two equivalence classes.
+
+can you see if you can add them?
+
+https://en.wikipedia.org/wiki/Equivalence_class
+
+or multiply them?
+
+[n_i]+[m_i]=[n_i+m_i]
+
+[n`_i]+[m`_i]=[n`_i+m`_i]
+
+if you know the first two are equivalent, does it imply that the last one is equivalent?
+
+<n_i+m_i>~<n`_i+m`_i>
+
+{i|n_i=n`_i} \element \F
+{i|m_i=m`_i} \element \F
+
+What about {i|n_i+m_i=n`_i+m`_i} \element \F
+
+addition of the equivalence classes are well defined as is multiplication.
+
+<0>
+[0]?
+
+{i|_i=0} \element \F
+
+the standard model of arithmatic
+
+<\N, +, *, 0>
+
+if you have a statement in the language of arithmetic, how do you verify it or something?
+
+ultra power of the standard model of arithmatic
+
+there is nothing you can say in the language of arithmatic that is false on the stardmodel but true in the ultra power (and vice versa)
+
+these ultra powers are elementarily equivalent to their standard models
+
+-----------
+
+you can take touples in the crazy structures and subtract one from it inifintly often.
+
+ <0,1,2,3,4,5,...>
+-<0,1,1,1,1,1,...>
+ <0,0,1,2,3,4,...>
+
+
+--------
+McAloon
+
+computable addition for a structure
+computable mulitiplication for a structure
+but not both at the same time
+
+-------
+there is a large class of very hard problems (where solving it you would get a noble prize) that ahve to do with time and space complexity.  satisfiability is NP-complete.  we dont know if there are efficient algorithms to solve NP-complete.
+
+one of the reasons they are difficult is because people developed a huge number of techniques to deal with computability.  these techniques were discovered not to work for these structures.
+
+structural integrity questions in these nonstandard models are easier to solve or something.
+

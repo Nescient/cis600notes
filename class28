@@ -1,0 +1,308 @@
+# Wed May 04 2016 Science and Technology Center 4-201 @ 0900
+# CIS600(400)
+# Howard Blair
+
+
+howard clinton sprot
+attractors
+
+--------------
+
+jack tries to explain quantum
+john carver vining iii (jack)
+
+
+first define the terms
+a quantum bit, is the version of a classical bit in quantum space
+
+we want to identify the spins of particles which are undeterminable until they are observed.
+
+/blair{you can represent a quantum bit in many ways.  you can do it with spin, charge, electronic ossilations etc}
+
+spin can be up or down.
+
+think of one as 
+
+[ 0 ]
+[ 1 ]
+(P1)
+
+and the other as
+
+[ 1 ]
+[ 0 ]
+
+(P2)
+
+where p is the probability
+
+P1 |0> + P2 |1>
+
+this means that the probabilities will be squared.
+
+\blair{classical bits are just this and that.  we use 0,1 as convience.  with any three things you can create a free vector space of those three things and something about looking at all the functions that map those things into real numbers.
+
+(x,y) != (y,x)
+this doesnt really have anything to do with the order.  it has to do with the phenominon that it represents (the plain).
+talked about how arrays work.
+
+an ordered pair is just a function that maps the first index to x and the second to y.  since its a pain to write the whole table, we just write the odered pair instead.
+
+take a function that can convert something arbitrary into a number.
+
+(f+g)(cell_phone)=f(cell_phone)+g(cell_phone)
+af(cell_phone)=a(f(cell_phone))
+
+so if you have some function that maps a nonempty set S into the real numbers \R
+
+here must be a linear function that converts the reals into the vector space if you can get a g that converts S into V
+
+what jack is doing:
+{ <b>0</b>, <b>1</b>}  -> \C (complex numbers)
+
+what function represent the zeroth thing itself?
+
+in   | out
+---------
+\b{0}|1
+--------
+\b{1}|0
+
+\C -> complex numbers
+
+in polar quardinates, a point has some angle from x and a distance:  r\theta
+
+for complex numbers:
+
+
+if you have a single point on a plain, and you change it, there is no way to tell that it changed.
+
+
+there is one real number that is not a symmatry of the plain:  0
+
+composition is multiplication
+
+something about how you can rotate things and that causes some exponent
+e^i
+
+why is the probability squared?
+it comes from two sources:
+
+
+fermionic matter, poly exclusion principle (two matter cannot be in the same place)
+bosonic matter, photonic matter (they can all be in the same place at the same time)
+
+with current technology, we can send photons thorugh a crystal and 1 in 100 photons will duplication into two photons.
+
+you cannot make fermionic matter from photons
+
+is not unitarian to duplicate photons
+
+}
+
+a|0>+b|1>
+
+1/      [1  1][0]=[ 1]
+sqrt(2) [1 -1][1]=[-1]
+
+|x> is a ket
+<x| is a bra
+
+experiment shows there are no hidden variables
+
+hadamar gate
+
+tuffoli gate
+https://en.wikipedia.org/wiki/Toffoli_gate
+
+abc-> (a,b,c \XOR ab)
+
+tensor product
+cronical product
+
+this takes two products and takes each cell in the first one and multiplies it by the second one creating a 4x4 (for 4x4 inputs) where each quadrant is as before
+
+\aside{quantum states are the free vector space over classical states}
+
+the toffoli takes three inputs so we need to have three bits to work with.
+
+so either 1 or 0 in the first, second, and third position
+
+c flips when a and b are both 1, otherwise you get c
+a and b come out the same
+
+you can really build toffoli gates.  if you have quantum ones and a toffoli gate, you can make every other thing from that (binary gates).
+
+and the toffoli gate is reversable.  reversable gates waste far fewer energy.  if you waste too much energy in a quantum thing you create decoherence (mess up the phase).
+
+grovers algorithm.  this is the quantum search.
+https://en.wikipedia.org/wiki/Grover's_algorithm
+
+this requires an oracle function.  this indicates that it is something you want.  if it receives something that is wanted, it inverts it.  everything else is left alone.
+
+the oracle can figure out if its a hit without looking at the thing.
+
+if you iterate the grover process too far, you will start to degrade the output.  but if you do it enough times, it will actually be pretty highly probable what you want.
+
+oilers method.
+https://en.wikipedia.org/wiki/Euler_method
+
+-------------------------------------------------------------------
+
+evolutionary algorithms
+maiya caldwell
+
+evolutionary computeration, algorithms, string example
+
+## evolutionary computation
+*subfield of computational intelligence
+*concept for solving difficult problems
+**evolutionary programming, genetic algorithsm, evolution, stratigies, genetic programming
+*inspired by principles of biological evolution
+
+environment->problem
+individual->candidate soution
+fitness->quality
+
+^--(how biology maps to computerology)
+
+##evolutionary algorithms
+*subset of evolutionary computation
+*finds optimal soluion to a problem given a solution space
+* uses evolutionary principles for search guidance
+
+\aside{showed to be really good for robotic devices that move around on turrain or something}
+
+##evolutionary algorithms
+*representation
+*population
+*evaluation
+*parent selection
+*variation operators
+*survivor selection
+
+some sudo code
+
+string evolution
+
+source:  "jiKnp4bqpmAbp"
+target:  "Hello, world!"
+
+*apply fitness/quality evaluation function
+*apply muation function
+*assess fitness
+*update or continue until fitness=0
+
+## applications
+*optimizing aircraft designs
+*neural network architectures
+*quality control
+*puzzles like sudoku
+
+##challenges
+*no guarantee to reach optimum solution
+*algorithm may never stop
+*add guaranteed termination conditions
+
+people to pay attention to
+paul vitanyi - denmark or something
+stephanie forrest - university of something in santa fae
+
+
+--------------------------------------------------------------------
+quantum support vector machine
+kandarp makwana
+
+proven to be successful in many different tasks
+
+somethign about hilbert space and other stuff we will have to learn on out won
+
+when you draw points on a plane, how do you draw a line to seperate them.  you would want to draw the line so that it has the biggest margin of error (furtherest from all the points)
+
+vector machines chooses an optimal line.
+
+the hyperplane representation
+*the hyperplane is represented by w^Tx+b=0
+*let x_n be nearest data point to the hyperplane.  to normalize the hyperplane.  it must be w^Tx_n+b=1
+*distance between x_n and plane = 1/||w||
+
+##the optimization problem
+*maximize 1/|w|
+*subject to y_n(wx_n+b)=1 for n=1,2,...,N
+*maximization of 1/|w| = minimization of 1/2(w^Tw)
+
+##lagrange formulation
+*minimize some crazy thing...
+*some more crazy formulas
+*and another one
+
+get a kernel matrix
+
+svm = support vector machine
+
+something about least square representation
+
+this takes a rediculously long time and is collosally complex.
+
+\aside{usually quantum gives you quadratic speed up rather than exponential speedup}
+
+svn cannot be parallelized
+
+quantum bits(qubits)
+
+quantum svm
+calculate kernel matrix and obtain the optimum of least squares dual fomulation
+
+andrew ling?
+there is a course from caltech
+
+---------------------------------------------------------------------
+mastering the game of go with deep neural networks and tree search
+li qiu
+
+this is based on a paper of the same name.
+
+how go works:
+1. alternatively place black and white marbles
+2. every point on the board bust have an open point (up,down,left,right) - liberty
+3. "ko rule" stones on the board must never repeat a previous position of stones.
+
+#two breakthroughs:
+*uses value networks and policynetworks
+* new search uses monte carlo semulation
+
+##neural networks
+
+tre eplicy networks
+one value network
+mcts
+
+supervised learning policy network
+
+----------------------------------------------------------------------
+dots and boxes ai introduction
+donghua xue
+
+dots and boxes is a game for two players
+where you connect two dots, taking turns
+if you complete a box, (the fourth side), you take that box and must play again.
+
+turn ends when you have not completed a box.  you are not required to complete the box.
+
+##the long chain rule
+you can sacrifice two boxes to try and get the long chain
+
+(m+1)(n+1) is odd
+mn + m + n + 1 is odd
+mn + m + n is even
+
+only if m and n are even?
+
+this is not a must win strategy
+
+\blair{to his knowledge, there is no known best game for dots and boxes.  no known perfect game.  checkers has a perfect game.}
+
+
+---------------------------
+
+for presentations, we can add it to the cv that we did a presentation in an ai seminar.

@@ -1,0 +1,119 @@
+# Wed Mar 30 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+he talked about the presentation.  he will not set a date yet.  submit a summary of what you are going to present.  less than 1 page as a proposal of what you want to present.  and extended abstract.  due april 15.  this can have something to do with baysean nets.  he wants us to extend it beyond what we talked about in class.
+
+some aspect of baysean nets that we havent covered and that we wont cover very soon.  anything related to korb and nicholson.  he will present something on marginal probabilities.  another aspect is something that woudl go beyond the scope of a 400 level AI (anything in AI).  it can be related to baysean or something else recent advance in AI.  if you are wondering, talk to blair about it.
+
+he had mentioned philosophy.  he had something from nick bostroms book.  not just a book report.  do an exogesis.  filling in details bostrom glosses over.  as if you were doing a lecture on the book.  there is one chapter of particular interest is chapter 4.  he concept of recalcitrance.  a resistance to progress.  chapter 8 & 9 are also interesting.  and 7.  the relation between intellegence and will.  what do we mean by will.  8 has something to do with social science.  this is acceptable.  there is a concept called agency.  you might do something about agency.
+
+how do you determine whether or not a machine intellegence has "agency".
+
+here is an etherical quandry that has already surfaced.  ther eis a push to develop self driving cars in a practicle kind of way.  no one would have a car anymore that wasnt self driving.  no more human drivers.  phone for a car to pick you up.  here is an ethical problem.  suppose that a self driving car is in an emergency situation.  does it take advasive action on the basis of minimizing harm on everyone or just its occupants or external people or what?  this an example of the trolly problem.
+
+/sam:  what if one of the people is potus.  or some other vip?  the only person who knows how to make these cars?  etc.
+
+it was a very big suprise that linguistic theory had no basis to translate between languages.  that it just uses a massive database of pretranslated things.
+
+/sam:  it is interesting that we built a computer to win at go and the whole point of a game is for the players to enjoy the process.
+
+length:  20 minutes.  a typical contributed minutes at a conference is 20-25 minutes with 10 minutes of questions. he claims it will take longer in the class room than when you practice.
+
+we should produce an analysis.  dont jsut report someones claim.  why do you believe it.  what compells us to believe the claim.
+
+3 ways to read semi-techinical phylosphicla materla:
+
+read first charatably.  give them the benefit of the doubt and try to believe their claims.  be able to see where the claim is coming from.
+second pass is to read critically.  this is where you see what the problems are.
+third pass is to read balanced.  now you should know the flaws and strengths.  this is having assymalated the kowledge.
+
+this is for research level phylosophy.  not bostroms book.  bostroms book is general reading material and you dont need to read it at that depth.
+
+presentations will be given in class.
+
+he may be given a conference in the last full week of april.  we may miss that wednesday class.
+
+3 or 4 presentations per class. three classes for presentations.
+
+for the graduate students, we will get an additional problem set with the presentations.
+
+-------------------------------------------
+
+bayesian network
+https://en.wikipedia.org/wiki/Bayesian_network
+
+he talked about the image:
+https://en.wikipedia.org/wiki/File:SimpleBayesNet.svg
+
+where do the numbers from the bottom table come from?
+
+the probabilities for the others are priors.
+
+conditional probability tables are probability of column header given row headers
+
+x flat hat (bar?) means the compliment of event x in the probability space
+-x-
+
+P(X|Y)+P(!X|Y)=1
+
+P(X|Y)=P(X^Y)/P(Y)
+
+P((X^Y)U(!X^Y))  // these are disjoint sets.  they must be since !X and X have no intersection
+// this is the same as P(Y) since anything in not in X would be in !X
+
+
+= P(X^Y)+P(!X^Y)
+= P(X|Y)P(Y)+P(!X|Y)P(Y)
+and now you can divide out P(Y)
+
+-----------
+
+if you have a bunch of information and want to know if htat is enough information to determine something else:
+
+(like if you know what happens to the sprinkler when it is raining, do you know what it does when it is not raining?)
+
+
+you can show that you dont have enough information for Q from P1...Pk.
+
+\aside{
+in quantum mechanics.  because of quantum physics the world is nondetermanistic.  the world is only nondeterministic if observations are made.  if you dont look at it, the world is evolving waves of probabilities with a certain degree associated with them that is a twisted square root something.  in order to distinguish two populations, one from the other, what you needed to pay attention to is square roots probability distributions or seomtinghing.
+wiht empherical observation, you cannot know that tomorrow it wont be different.  you can only make an observation and determine that it matches your hypothesis.
+}
+
+make situations where P is true and Q is true and another situation where P is true and Q is false.
+
+how do we know we cant get he Sprinkler information from the Rain table?  even iwth the dependency, make two situations where the Sprinkler has two numbers using hte Rain values.
+
+he drew a square with different lines through it.
+
+it created four unique areas and he assigned S and !S and R and !R.
+
+P(S|R)=P(S^R)/P(R)
+
+the denominator is fixed to 0.2, but the numerator can change its value.
+
+one value in each of those rows has to be made up.  the other is just the addative to 1.
+
+--------
+can we figure out the bottom table given the top two tables.  the same counter example will show the answer is no. but there is some information that can help you make an intellegent table.
+
+is tehre anyway to make the grass wait without rain or the sprinkler?  dew, fog, hose, etc.  you can then say that you make a model where its not foggy, or early in the morning.  it is only valid for rain and sprinkler.
+
+one way to encode that in your conditional probability table is to say that the grass is not wet when the sprinkler is off and it is not raining (the probability for that will be 0.0)
+
+P(G|!S,R)
+
+!S,R is a fixed event
+
+so you know P(G|!S^R)+P(!G|!S^R)=1
+
+the third column cannot be given from the first two.
+
+which of the columns are free?  which ones are determined by the others.
+
+if the sprinkler is off, even though there is no other cause, the rain is not sufficient to determine the state of hte grass.  we cannot get the second row from the rain table.
+
+but the table can be a reasonable guess.
+
+this is also true for the korb and nicholson text.

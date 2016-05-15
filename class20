@@ -1,0 +1,143 @@
+# Wed Apr 06 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+calculate the probability that hte patient has cancer given that the patient has a positive x ray and they are short of breath.  and then the true false of both of these.
+
+P(C=T|X=T,D=T) = ?
+
+P(C=T|do X=T, D=T) IS NOT THE SAME THING
+
+P(X|Y)= P(X,Y)/P(Y)
+P(X,Y)=P(X|Y)P(Y)
+P(X,Y)=P(Y|X)P(Y)
+
+P(C=T|X=T, D=T)
+...    =F,  =T
+...    =T,  =F
+
+ordering:  S, P, C, X, D
+
+\aside{
+
+P(S, P, C) = P(S)*P(P|S)*P(C|S,P)
+           = P(S)*P(P)*P(C|S,P)
+           = 0.1 * 0.3 * 0.05 = 0.0015
+
+}
+
+Causal Reasoning
+Judea Pearl
+
+-----
+back to the problem:
+-----
+P(C=T|X=T, D=T)
+...    =F,  =T
+...    =T,  =F
+
+P(C, X, D) = P(C)*P(X|C)*P(D|C,X)
+           = P(C)*P(X|C)*P(D|C)
+           = P(C) * 0.9 * 0.65
+           = 0.101 * 0.9 * 0.65
+           = 0.059085
+
+P(C) = P(C|P,S)+P(C|!P,!S)+P(C|P,!S)+P(C|!P,S)
+     = 0.05 + 0.001 + 0.02 + 0.03 = 0.101
+
+P(C, !X, D) = 0.101 * 0.2 * 0.65 = 0.01313
+P(C, X, !D) = 0.101 * 0.9 * 0.3 = 0.02727
+
+P(C=T)=0.01663?????
+
+the answer is supposed to be a little over ten percent.
+
+--------
+Pr(W=v_i) = P_i
+E(W)=\sum i=1 \to n {v_i*P_i}
+
+according to excited math dude:
+P(C) = 0.01163
+
+P(C|X,D)= P(C,X,D)/{P(!C,X,D)+P(C,X,D)}
+        = 0.01163*.9*.65
+
+to get the probability for cancer you take the probabilities of the nusences variables times teh probability for the cancers like it did above.  each needs to be scalled by the respective probabilities, i think.
+
+see the image https://upload.wikimedia.org/math/1/e/9/1e9696954df2f0bab7c49a645260669e.png
+
+-------------
+P(C=T)  (from the graph, this is dependent only on pollution and smoking)
+
+this will be equal to the sum of some joint probabilities.
+
+P(C=T)=P(C=T,P=T,S=T)
+      +P(C=T,P=T,S=F)
+      +P(C=T,P=F,S=T)
+      +P(C=T,P=F,S=F)
+// you should probably order this so that C is last
+
+you must expand each of these probabilities based on the table and what we did above in the aside.
+
+
+---------
+what is the probability of getting two heads in a row for a fair coin flip.  or a heads followed by a tails?
+
+H H
+H T
+
+well, the possibilities are:
+HH
+HT
+TH
+TT
+
+can you calculate it?
+
+----
+talked about the monte hall problem
+calculate the probabilities of winning
+https://en.wikipedia.org/wiki/Monty_Hall_problem
+----
+
+
+probability of heads in any flip is 0.5
+probability of two heads in any two flips is 0.5 * 0.5 = 0.25
+
+according to https://www.cs.cornell.edu/~ginsparg/physics/info295/mh.pdf it will take 6 flips to get two heads in a row
+
+the answer is 1 + p + p^2 + p^3 ... + p^{n-1}. / p^n
+
+-------------
+two photons can occupy the same area in space.  electrons can absorb photons.  electrons are tiny.  photons are massive.  they can be absorbed by the electrons.  this increases the electron.  photons are a wave of possibilities that propagates through space.  it is a transvrese wave.  sound is a compression wave.  the sine wave has a plane of polarization.  normal light has all kinds of directions of planes.
+
+if the photon makes it through a polarization filter, it depends on the plane of polarization.  if it makes it through, it will now be polarized to that plain of polarization.  if you ahve a second filter identical to the first, 100% get through.  if you put it at 90 degrees to the polarization, the probability to get through is 0.
+
+if you take three filters, one horizontal, one 45 degrees and one 90 degrees, then 1/8th of the photon getting through.  a 45 degree would be 50%.  and the first one is 50%.  so all three is .5 * .5 * .5 = 1/8.
+
+you can think that the filter rotates it, but that is not exactly correct.  it turns out that there is a....
+
+hadamart.  you can make something called a hadamart.
+jaques hadamard.
+https://en.wikipedia.org/wiki/Jacques_Hadamard
+
+he wrote a book called the psychology of invention in the mathematical field.  everyone in STEM should know this book.
+
+he came up with a theory on prime numbers.  he didnt get the strongest version though. someone else came up with that.  and he spent a lot of time trying to figure out why he did not get it.  this book is the result of that.  you should read it.
+
+somethign about dover.
+
+
+Hadamard Gates
+https://en.wikipedia.org/wiki/Hadamard_transform
+
+------------
+if you look at it, 50% probability for horizontal or veritcal.  dont look at it, and it will keep its orientation.
+
+
+
+// has quantum calculations been done in space without a large gravitational pull?
+
+elain aszfet or something.
+azbay?

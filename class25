@@ -1,0 +1,152 @@
+# Mon Apr 25 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+first day of presentations.
+
+chris.  deep learning.
+
+a lot of background.
+
+perceptrons.
+
+a single perceptron looks like this:
+
+a circle with multiple inputs and a single output.  a demuxer?
+
+these inputs are either zero or one.  we take a lot of yes no questions and compute a yes no answer.  they have a weight associated with them.  the weight has to be a real number.
+
+the output is a bit more convoluted.  to compute the output of hte perceptron, you take the sum of hte input.
+
+\sum from i=1 \to n of w_i*input_i
+
+we then use an activator function
+
+O_t(x) says yes if above some threshold and no if below:
+
+1 if x >= t
+0 if x < t
+
+output is the activator function O_t(S)
+
+the weight indicates how much you care about the response or the asker or something.
+
+you can use these perceptors for boolean functions.
+
+such as AND:
+              w1 = 1
+              w2 = 1
+              t = 2
+the network would look like
+
+1---|-|---->
+1---|_|
+
+the and has a threshold of 2 so that both must be a 1 to get an output of 1.
+
+
+if you take the pair of the inputs you have either:
+
+(0, 1)            (1,1)
+
+
+(0, 0)            (1,0)
+
+the perceptor splits this space with a line that shows where 1 and 0 are split.
+
+you can also plot or
+
+perceptrons can be used for image classification.
+
+what about simple functions like XOR?  it doesnt have a single node represenation.  this has caused people grief, but now we can use multiple perceptors chained together.  this looks as follows:
+
+
+----
+    |---------
+---- t=2      |
+              |----------
+----          |t=0
+    |---------
+---- t=1
+
+you can represent multilayer perceptors with only two layers
+
+these are reall only good for binary classifications, but you can do weird curves and such to do something.
+
+each single perceptron can represent a line or a plain.
+
+but these are really only good for representation.  to move an arm or a limb, the robot can do many things.  so now we need to extend these perceptrons to neural networks.
+
+neural networks in the most simplest form are simply perceptrons, but the inputs are between 0 and 1 instead of just binary.  now we have probabilities!!
+
+we also need to change our activator function.  lets call this sigma.
+
+\capsigma is now usually continuous.  before, the activator function was discontinous.  we want these to be differentialble so we can train them in a efficient manner.
+
+\capsigma (x) = 1/(1+e^-x)
+this is a sigmoind function.  there is another one with arctagent.
+
+differentiability gives us back propagation.  it uses the differentiability to train the network in a backwards sort of manner.
+
+you also take the linear combination of the terms in the same way that you do for the perceptors.
+
+1/(1+e^-{w1i1+w2i2})
+
+sigmoids keep intervals between two bounds so they are nice as activator functions.  they very are similar to activator functions.
+
+\aside{
+micollic-pits
+http://www.mind.ilstu.edu/curriculum/modOverview.php?modGUI=212
+McCulloch-Pitts Neurons
+}
+
+suppose we want to classify digits
+
+take the digit 9 and break it up into different quadrants.
+
+we would have four nodes (one for each quadrant).  every nodes it connected to every other node.
+
+one thing about neural networks is that they are fully connected.  this makes the graph look hairy.  but i guess the fanout is only about a half dozen once you get up to a certain point.
+
+
+convolution networks are a type of neural network.  they are convoluted.
+
+neural networks with edges removed.  this allows you to represent structual things.
+
+going back to the digit 9 example, every node checks each quadrant.  there is no spatal knowledge.  to remove the edges, you make the network aware of space (what quadrant it is or something?)
+
+not a lot to proove about them, you just keep practicing until you find something that works.  guess and check.
+
+\aside{in human beings, you reach your peak in neuron development around age 2.  as you move on and on to learn more, your neurons die back.  more than have of htem disappear as you realize they are "unneeded"}
+
+some images are adverserial negatives.  it really messes up these networks.
+
+adversarial negatives
+
+this is one of the challenges faced on a daily basis in terms of image classification.
+
+
+deep learning today.  current events.  deep mind was baught by google back in the day and they have been doing a lot of work with convoluted networks:
+
+1. action retreval in images - vignesh ramohathan
+this takes an image and tries to figure out what is happening in the image.  this is good for automated survalience.
+
+^-- in google
+V-- outside google
+
+2. embedded swarm robotics.  - nagi
+
+
+making computers play atari (space invadors).  google deep mind.
+
+still not sure why adverserial negatives.
+
+recurrent and feed forward networks
+
+--------------
+sam savage
+
+
+remember to look up the java hypnotism animation with scroll pane
+

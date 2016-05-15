@@ -1,0 +1,258 @@
+# Wed Feb 24 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+we are going to shift topics today.
+
+lets take a look at Inference.  we will move toward this with bayesian networks.
+
+tie this to a paticular something
+
+Backward-chaining deduction
+
+Prolog
+https://en.wikipedia.org/wiki/Prolog
+
+there is an assumption that the truth value for a more complicated setence is a function of the truth table of its individual parts.
+
+given: !A
+therefore: A -> B
+
+this is a tautology:  !A -> (A -> B)
+not A implies that A implies B
+
+ A|B|!A|A->B
+------------
+ F F  T  T
+ F T  T  T
+ T F  F  F
+ T T  F  T
+
+given: At noon today I did not strike the match
+therefore:  If I had struck the match at noon today, then the match would have lit.
+
+lets try this differently
+
+A:  Match M is lit.
+B:  The moon is made of cheese.
+
+!A
+A_>B
+
+The first one is not valid the second one is.  Why?
+
+The first statement has the "if" word in it.  The grammar is different between the statements.  It is a subjunctive.  It expresses counterfactuals.
+
+The second is making factual statements.  I am in a situation where the match is unlit and the cheese moon is in this actual statement.
+
+The first is saying in this situtation I did not strike it, but if I had struck it in another situation the moon is cheese.
+
+the english words do not match the meaning of mathematical words.
+
+in logic, the whole is made of the subparts.  in real life this is not true.
+
+a phyilisophical person was thinking of logic so long he did not know what the english word and means. the clauses on both sides of a conjunction in english have to have relavince for each other or it is a run on sentence.  "i did not strike the match and the moon is made of cheese" -> no relavince.
+
+why is a false A make A-> true?
+
+"not for all" means "there exists not"
+this is the convention in mathematics and phylosophy.
+
+implication does not imply existence
+
+it was settled this way because there are fewer special cases when it is this way.
+
+you cannot settle retourical arguments with logic.
+
+but if you want a computer to understand arguments in natural language...
+
+--------------
+prolog is based on truth tables
+
+why is !A mean A->B is true?  how many possiblities are there?  2^4.  if you go through all the other possibilities for the truth table, you will find none of them work.
+
+-------------
+A literal is an atom or the negation of an atom.
+
+Assume not the conclusion and keep the premice and something about a prudgitive conculsion and see if its inconsistence.
+
+\forall x_1 .. \forall x_k [ L_1_1 V .. V L_n_n ]
+^
+..
+^
+\forall x_1 ... \forall x_k [ L_1_n V ... V L_n_m ]
+
+you end up wiht a conjunction of disjunction of individual
+
+disjunctions of literals are called clauses
+
+an atom is a positive literal and its negation is the negative literal
+
+https://en.wikipedia.org/wiki/Clause_%28logic%29
+
+Definite Clause:  at most one positive literal.
+
+example of a clause:
+
+(V = or, ^ = and)
+
+!P V Q V R V !S
+
+P^S-> Q V R
+
+!(P^S) V (Q V R)
+
+!P V !S V Q V R
+
+DeMorgans law
+
+P^S -> Q ^ R === P^S -> Q ^ P^S -> R
+P V S -> Q V R === P-> Q V R ^ S->Q V R
+
+these last two is a conjunction of clauses, the first is not.  you cannot reduce it.
+
+a negative clause is a conjunction of negative literals.
+
+a mathematician named Horn:
+
+a Horn clause is a definite clause and a negative clause
+
+ground logic program
+https://en.wikipedia.org/wiki/Horn_clause
+https://en.wikipedia.org/wiki/Ground_expression
+
+B :- A1,...,An
+B :-
+	A1,
+	...
+	An
+
+to do B, do A1, A2, ..., An.  it is frowned upon if hte order matters.
+
+----------------
+an example based on something called a singly-linked list
+
+a node in a sll has a data part and a next pointer to the next node in the list.
+
+John McCarthy created the language LISP
+
+he was an AI researcher and they developed the original version of LISP.
+mccarthy realized that if you could make pairs of things and you could take pairs and take their individual parts out of them, then you could say anything in a loggically rigorious fashion.  you do not need functions of "arity" greater than two.
+
+there are primative datastructures and compound datastructures.  he relied on lambda calculous developed in the 1930s.
+
+\lamda - calculous is in effect, the following thing:
+in logic we deal with sets and relations.
+
+All men are mortals.
+Socratees is a man.
+Socratees is mortal.
+
+1. Men \subset Mortals
+2. s \epsilon Men
+\therefore s \epislon Mortals
+
+lambda calculous is closelyreatled to contrinative logic??
+
+cominitary logic?
+
+logic of function application
+
+op(A,B) op(A,A)
+
+in sets you cannot have a set be an element of iteself
+
+-------------------
+to make a pair, construct the pair
+cons(x, y)
+
+is this different than x and y?
+
+cons(x, y) != x
+cons(x, y) = y
+
+if cons(x1,y2) = cons(x2,y2)
+then
+x1 = x2 and y1 = y2
+
+therefore, list nodes are cons'es
+
+cons(D, L)
+
+is 
+
+[data, ]-> [] -> []
+
+there are two elements of LISP, car cdr  (dr stands for decrement register)
+https://en.wikipedia.org/wiki/CAR_and_CDR
+
+car is the address
+cdr is decrement
+
+in pure LISP, everything is a primative data type or a sequence of cons
+
+in LISP, a list of three things is
+(A1 A2 A3)
+
+L = cons(A1, cons(A2, cons(A3, nil)))
+
+to get the second member of the list
+
+A2 = car(cdr L)
+
+in prolog syntax,
+
+cons is [ A | B ]
+
+so L would be
+
+[A1|[A2|[A3|[]]]]
+
+or [ A1, A2, A3 ] since the former is "stupid"
+
+append([], L, L)  <-- prolog syntax
+
+append([], L, L)  (the first appened to the second is the third)
+append([H|L], M, [H|N]) :- append(L, M, N)
+
+---------------
+suppose you can decide if A1 is less than A2
+
+A1<A2
+
+where is a sort algorithm
+
+sort([], [])
+sort([A], [A])
+sort(L,N) :- append(K, [A,B|M], L), not (A<B), append(K, [B,A|M]L1), sort(L1, N)
+
+this is bubble sort
+
+
+\aside:  if you have a list L, and you want to split it up into two parts, you split it into list K followed by two adjacent items:  K, [A,B|M]  (A is next to B with some arbitrary afterwards).  append(K, [A,B|M], L)
+
+one of the things that are appealing about it is the power of recursion.
+
+the flip side of recursion is inductions.
+
+(the island of the color blind)
+https://en.wikipedia.org/wiki/The_Island_of_the_Colorblind
+
+there is a whole lot of people on the island.  there are two eyecolors, brown and blue.  they have a taboo, they have to leave the island the following midnight if they should learn their own eyecolor or anyone elses.  (only their own, but if they tell anyone else thy get killed.)
+
+if someone shows up and says i see blue eyes here, what happens.
+
+you do induction on the number of people in the indigious population.  can you reduce n+1 to n?
+
+if there are two, and only one has brown, if you see the other peorson has brown eyes, you have to leave.  what if htey both have blue eyes?
+
+if neither leave at midnight, they will both know they have blue eyes.
+
+look up prolog examples.
+
+the bubble sort is non determanistic.
+
+there is a way to fake not in prolog.  cut fa someething.
+
+read through up to the beginning of the chapter in the book.

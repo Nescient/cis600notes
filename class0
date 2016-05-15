@@ -1,0 +1,83 @@
+# Wed Jan 20 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+we will follow the book pretty closely
+
+he told us a story about a rediculously less expensive book he found online than what the university book stores sells it.
+
+course notes on blackboard.
+
+conways game of life:
+
+showed us some images of the game
+
+rules (https://en.wikipedia.org/wiki/Conway's_Game_of_Life):
+
+1. Any live cell with fewer than two live neighbours dies, as if caused by under-population.
+2. Any live cell with two or three live neighbours lives on to the next generation.
+3. Any live cell with more than three live neighbours dies, as if by over-population.
+4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+
+
+cells can live if they have enough support, but not too much support.  a neighbour is vertical, horizontal, and diagonal.
+
+these rules map vectors of 9 boolean values to a single boolean value.  how many such methods are there?  how many functions map 9 values to a single value?
+
+story:  farmer has cows that have stopped producing cows.  vet cant help so he goes to the university.  university makes committee and puts together faluclty and they all spend a bunch of time measuring and analyzing cow then go back to university and do some calclations.  theoretical physiscts is chairman.  he goes back to the farmer and tells him that he has a solution but it only works for spherical cows in a vaccuum.
+
+the point:  we simplify the question:
+
+how many map two booleans to a single boolean?  AND does so.  OR does so.  we can specify the AND function with a truth table.  how many rows?  there are 4.
+
+AND truth table:
+
+0 0 : 0
+0 1 : 0
+1 0 : 0
+1 1 : 1
+
+there are 2^4 ways of filling in the output column (it can vary by order).  if you ever get stuck with the truth table for if, then:  go through the whole truth table and elimiate what it is not and what you have left is the truth.
+
+so if there are 9 vectors, there will be 2^9 rows for the truth table.  how many ways to fill in the output column?  2^2^9 or 2^512.
+
+there are 10^1million fermionds in the universe.  how many nanoseconds since the big bang?  30million * 1 billion * 13.8 billion = ~10^28 nanoseconds  something like 2^84 so 2^512 is epically massive.
+
+cellular automita is a huge rule space.
+
+any computation whatsoever can be encoded as an initial pattern in conways life.  it is a universal computation device.
+
+people have been thinking about superintellgience.  the singlularity where artificial intelligence outstrips human intellegence.
+
+some people say we are not conscious.
+
+can you make anything that is conscious.
+
+neumansterians.  david chalmans.  everything is conscious.  they takes physics seriously though.  rocks arent concious?
+
+when really pressed, most of us turn out to be arastotlieans.  maybe neutoneans if we have a lot of physics.  if we know a lot of relativeity, even that isnt enough to get into the right kind of physicists.
+
+
+observations about conways game of life:
+it is hard to keep going (besides gliders)
+all of the activity is happening in the space of the plane
+each grid space can only affect neighbors 1 away.  for it to get further out, the time must continue on until the neightbors get close to affect it.  they might die on the way.  each time step is a single integer.
+
+conways rule is not one to way.  there is not a single previous state.  running backwards is massively nondetermanistic.
+
+so you have a notion of time (the integers) and a space in which the computation takes place.  you have a limit to how fast information can move from one place to another.
+
+
+since quantum mechaniscs in 1900s there was no physical prediciton for dark matter and dark energy.
+
+one of his students made a generalization in his thesis that local states could change to different states.  each cell might have its own set of local states.
+
+you cant get through this course just by programming.  he promises to lead us through them in detail, step by step, to learn the math as we go.  you must practice.
+
+example:
+
+imagine he has two sets and exactly one contains the number 0.  either the right-hand set has it or the left-had set has it, but they do not both have it or dont have.  the right-hand set does not contain the number zero.  which set contains the number zero?
+
+
+as you understand more and more, you can learn more and more.  if you are learning in the right way, the more you learn, the less you have to actively remember.
+

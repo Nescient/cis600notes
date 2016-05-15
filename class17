@@ -1,0 +1,93 @@
+# Mon Mar 28 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+why we dont need grandmother neurons - howard blair
+
+there is a subject that saw pictures of his grandmother and htey monitored the neurons that fired.  there was a particular neuron that fired when he saw his grandmother neuron.  the idea is that everything we have learned and store in our brain is coded in a neuron or a group of neurons.  the firing of the neurons create tehse memories or something.
+
+https://en.wikipedia.org/wiki/Grandmother_cell
+
+he (blair) is not arguing that it is wrong, he is arguing that we can account for mental things based on other phenominon.
+
+(aside, how do you ontologically characterize abstract structures?)
+
+analogy between laptop and brain.  we deal with computer programs running on the laptop, not the electrical phenomina of the physical laptop.  the running time of the program allows us to do far more complex phenomina than the simple underlying physics.
+
+10^15 neuro connections or something something about around 10^18 or 10^20 for connections.
+
+https://en.wikipedia.org/wiki/Euglena
+Chlamydomonas Reinhardtii
+
+https://en.wikipedia.org/wiki/Chlamydomonas_reinhardtii
+
+the animal is fast for its size.  it attracts toward certain frequencies of light and is repeled against certain frequencies of light (as associated with food or preditors).
+
+the animal can do more complicated things that whatits raw structure suggests.  it might be able to do this based on nonlinear dynamics.  for this to be true, it would have to have a feedback mechanism, which it does.
+
+
+showed the image from blackboard:
+juliaUVBox copy.gif
+
+two dots with directed, connected lines both ways between them. 
+
+say the left is U and the right is V
+
+the arrow head indicates what can read.  u can read v on two channels and v can read u on two channels.
+
+u_t+1 = v_t | v_t
+      = 1 - (v_t)^2
+
+v_t+1 = 1 - (u_t)^2
+
+what happens when you iterate based on this formula?  see the image.
+
+if you initialize u or v to anything in the white value outside the square will blow up to infinity exponentially.  any value in the blue region will bounce around in the blue region until it converges (same for red, but htey converge to different values)  blue will go to (1,0) and red will go to (0, 1)  it can bounce between different blue/red regions but it will stay within its color.  anything in the color doesnt bounce at random, it will converge to bounce between 0,0 and 1,1 and continue bouncing back and forth between them.
+
+top right corner is the "golden ratio".
+
+talked about squareNormCobit.gif
+
+he talked about chip yeilds being abysmal.  chips come out without working at all and have to be embedded in error correction chips.  can you make an architecture that can handle errors though?
+
+attractors can do this by allowing things to be within the basis of attraction when going into the next stage of the chip.
+
+maybe the values will be wrong, but the relationship between then could be the same.  going back to the square colored image, if its not perfect, the squares would become slurred, but hey would still be relationally the same.  as long as its not hte actual values (voltages) that hold state, use the relationship instead and you can create a higher yeild.
+
+
+---------------------------------------
+https://en.wikipedia.org/wiki/Newton's_method
+
+see image v1.
+
+
+imagine a quadratic formula:
+
+ax^2 + bx + c  (this is all of them)
+
+lets reduce:
+
+ax^2+bx
+now a+b=1
+
+f(x)=(1-b)x^2+bx
+f'(0)=b
+
+if the derivative at the fixed point is less than 1 it is an attractor.  if it is grater than one it is a repeller.
+
+he went into a really complicated diatribe about how to make switching functions.
+
+one of the problems iwth neutons method is that you can really freakin miss pretty hard core.
+
+with respect to neutons method, these roots are attractors and htey have a basis of attraction.  (bason of attraction?)
+
+what are the boundries typically alike in these situations?  they are like fractals.
+
+google images basons of attractions of x^3 = 1
+https://www.google.com/search?q=basin+of+attraction&biw=1366&bih=613&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiQ9LDPpOTLAhXG_R4KHQAwCTAQ_AUIBygC
+
+they form a regular engdon  (pentagon)
+https://www.google.com/search?q=basin+of+attraction&biw=1366&bih=613&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiQ9LDPpOTLAhXG_R4KHQAwCTAQ_AUIBygC#tbm=isch&q=basin+of+attraction+x+cubed+equal+1
+
+
+you can design a different geometry to fix this.

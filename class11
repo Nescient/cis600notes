@@ -1,0 +1,282 @@
+# Mon Feb 29 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+If you started reading up through chapter 2.
+
+divison of changes in certainty into changes in belief and disbelief reflects the curiou nothing that belief and disbelief are not necessarily related to one another (korb quote from book)
+
+we cannot infer what he does think the moon is made out of by saying he does not believe it is made of cheese.
+
+logically:
+
+W believes P
+!(W believes P)
+W believes !P
+
+these are three distrinct things:  belief, denial of beliefe, disbelief
+
+modal diastic logic  (docastic?)
+https://en.wikipedia.org/wiki/Doxastic_logic
+
+reasoning about beliefs
+
+-------
+
+let M be "wallace believes the moon is made of cheese"
+
+the modal operator believes
+
+this is:
+
+_bel_ M
+
+to deny that is to simply negate the entire:
+
+!bel M
+
+this is different than
+
+bel !M
+
+(the belief that M is false)
+
+(M is really "the moon is made of cheese".  bel M is that there is a belief that the moon is made of cheese)
+
+to deny that beliefe is to say that there is not a bliefe that the moon is made of cheese
+
+it is better:
+
+M: the moon is made of cheese
+bel_W M is that Wallace believes that the moon is made of cheese
+
+these are propositional attidues of Wallace
+
+https://en.wikipedia.org/wiki/Propositional_attitude
+
+
+beliefe, disbeliefe, denyal of belief, denyal of disablief
+
+there is also knows that, besides believe that
+
+to know something, you must know that you know it.
+
+if the robot knows something, does it have to know that it knows it?
+
+"that there can be no relation between belief and disbeleife" is an overstatement according to blair
+
+selenology is the moon, geology is the earth
+
+there is a center of gravity between the earth and the moon.  both objects rotate around this.
+
+people do have high degree of beliefes in direct contradictions.
+
+if you come to realize you believe in direct contradictions, dont throw out either one until you hvae a compelling reason to do so.  if the matters are important, you have a responsibility to find that out.
+
+another related topic:  theory change or theory revision
+?? https://en.wikipedia.org/wiki/Theory_of_change
+
+default reasoning
+https://en.wikipedia.org/wiki/Default_logic
+
+
+john has a pet bird that doesnt live in a cage.  would you link that this bird flys around and returns to john.  would you think the bird flys? until you find out something to the contrary, you might assume the brid flys.  then you find out john lives in northern alaska and he has a pet pinguin.
+
+this is an example of default reasoning.  the famous example is that tweety is a bird and therefore tweety flies.  then you find out that tweety is a penguin.
+
+you would go with the normal expectation.
+
+-----
+
+what do you do when you find out that there is some abnormally?  you start to examin what you have concluded and discover that you have to retract something.  retract what you need to retarct and change your theory.  how radically should you revise it?  retracting extra assumptions and asserting some assumptions.
+
+----
+john mccarthy created lisp and was logic at mit
+
+roger shank was at yale
+people called him the thomas edison of artifical intellegence (he used to dabble in random things)
+
+they both had a reasonable argument, but statisticians beat them now.  probability is winning now.
+
+playing hot and cold is gradiant discent.
+
+statisticians apply variations of gradient discent.
+
+Bostrom, Nick. Superintelligence: Paths, Dangers, Strategies,
+
+will we make ourselves obsolete?
+
+somethign about a book in the future about an intellegent, conscious itnernet that was created when a girl wrote a perfect simulation of a rat brain.
+
+there is this notion, for example, anti-reductionistic in some parts.  even if we have the complete physics that do not determine everything.  laws of chemistry, biology, that are not determined by the laws of physics.  (blair thinks it might be nonscense)  even the laws of physics dont determine that what is happening, you also need the initial conditions.  these determine the range of possiblilities.  why does the universe seem law like?  you can have a something something something
+
+in his psychology conference he started with the following remark:
+
+in king james bible there is a phrase "jot and tittle"
+
+every jot and tittle is locked in a death battle with every other jot and tittle
+the catch is that every last little particle needs the other
+
+this is the idea from the artificial life thing.
+
+the laws of nature forces this stability of competition where you cannot completely wipe something out or something.
+
+there is something in the brain (coupled ossilation)
+https://en.wikipedia.org/wiki/Oscillation#Coupled_oscillations
+
+the moon titan.  some picture looks like the lower hudson valley.
+it is amazing earth like, except toxic to life (our life).
+
+but the turrain looks like earth.
+
+the lander was named huyegen
+https://en.wikipedia.org/wiki/Huygens_%28spacecraft%29
+
+he was a physicist who observed and explained:
+if you put two osscilating devices in prodimity where one can influence the other through vigration (even through microoscillatoins or something) and they introduce things over a long long long time.  after a while, they will become phase locked.  in a ratio of the phase (not necessarily at the exact phase).  they wont be knocked out unless a major stimulous comes along.  many things in the solar system are phase locked like this.
+
+so....in the brain:
+
+there are neurons that pulse.  there are whole sheets of neurons that pulse.  some stimulous comes in to change the pulse of one, the other one keeps going, they will then become phase locked again.  we know that occurs, but we do not know if that has anything to do with neural processing.
+
+---------------------------------------
+
+when he talks about intellegence, he is not talking about consciousness.
+
+review the workbook to better understand the chapters read (first two).  notation comes from taylors book on probability.  kingnam and taylor introduction to somethign and probability.
+http://www.amazon.com/Introduction-Probability-Textbooks-Mathematical-Sciences/dp/0387948309
+An Introduction to Measure and Probability
+
+-----------
+
+a probability space has three components (ohm, signafield, probability measure)
+
+where ohm is non empty
+sigmafield is a collection of subsets
+p is probability measure
+
+a sigma-field on ohm is a collection of subsets such that it contains ohm and is closed under complementation and countable union.
+
+1. \omega \elementin \sigmaField (gothic F)
+2. If E \elementin \sigmafield then (\omega - E) \elementin \sigmafield
+3. if E0, E1, E2, ... are lements of \sigmafield, then union E is an element of \sigmafield
+
+the members of \sigmafield are events.  the structure with just componenets ...something
+
+a probability measure on the event space is a mapping from the event space to a unit interval between 0 and 1 (the probability).  \sigmafield is the event space
+
+the probability of the whole thing is 1
+
+probability is intended to capture the notion that it is a ration of a part to a whole.
+
+1. P(\omega) = 1
+2. P is countably additive, events are pairwise disjoint
+---either htey are the same or there is no overlap
+
+any two different subscripts, the intersection is the empty set
+
+-------------
+if you start off with a set and just assign probability to them.
+(make them in the topological set to make it easier)
+take a bunch of sets, and from there they will generate a sigma field.
+try to make a probability assignment in some coherent way.
+
+the empty set is an event also because it is closed something under omega
+
+it could be that the first four are nontrivial, pairwise disjoint events, but then allt he reset are emptyset.
+
+suppose we have
+E0, \eptyset, \0, \0
+
+let E1 be the complement of E0 = \omega-E0
+P(E0)+P(\omega-E0)+P(\0)+...
+
+= P(E0 union (omega-E0))
+= P(omaga something)
+
+the probability of the empty set is 0
+the probability of the complement of the event is 1-Prob(event)
+
+see example 2.1 for a concrete example
+except that P maps sets, not elements
+P({1}) for example instead of P(1)
+Events are sets, not elements in the set.
+
+"probability of single event 1"
+
+the probability of odd number:
+0 + 2/21 + 4/21 + 6/21 = 12/21
+
+http://mathworld.wolfram.com/CountableAdditivity.html
+https://en.wikipedia.org/wiki/Sigma_additivity
+
+-------------------------------------------
+
+take an inifite binary tree.  this can be represented by paths through the tree.
+
+an interval is starting at the root and going down to a specific node.  you can define that with a specific sequence of 0s and 1s.  the itnerval is all the paths that extend from that one.
+\aside(paths are isomorphic to the canter set)
+
+the interval corresponding to the empty sequence is every path.  this would just be the root.  he identifies paths by the edges rather than the nodes.
+
+the length of some path is the number of edges.  this is consistent with the path from the root ot the root being the empty set.
+
+for a path of length k, any of those verticies is equally likely given a 50% chance of picking any path, so the likelyhood of any of those nodes is 2^k
+
+for any two sequences, they either have empty intersection, or one is included in the other.  or something like that.
+
+imagine number line with pebble and any tick of the clock it randomly moves either direction.
+
+the molecule of nitrogen.  it is intractible to get the probability that a molecule is at some point.  like picking any random number.  it is an infinitude of possibilities so they all have equal probability of 1/inifite or zero.  so we change to say, what is the probability that it is in a small box.  we look at events that have some thickness.
+
+thus, we are intersted in intervals.
+
+
+
+
+do the problems for homework.  prolbem 2.2
+
+
+
+
+
+
+
+considering the image class11.png
+
+any two intervals is either one below the other or equal.
+
+if one is below the other, hte interval is disjoint intervals.
+
+unless one is below the other in the tree, they will be non-intersecting intervals.
+you can have one below the other where they do not intersect.
+
+can you construct a tree with ininifily many verticies with a finite path (number of edges)?
+
+does this theorum be true?
+for a finitely branching tree iwth inifinitly many verticies must have an inifiite path.
+
+according to comp sci and math, that is true.
+
+start at root, below at least one of htem there has to be inifinite verticies, go to that and repeat the process.  keep going.
+
+if the tree is ordered, the fact that you get a pthat that way follows set theory.
+
+if the three is not ordered, you need an axium.
+
+monarch-parxy paradox.
+
+you get a sequnce of disjoint intervals.  they get smaller and smaller, but the union adds to the parent interval.  so the probabilities should sum up.
+
+
+
+
+he wants us to understand this:
+
+countable additivity implies this
+if you have an infiitely long nested events, the intersection of that set will also be an event.  its probability will be the greatest lower bound of the nested events.
+
+
+
+borrel heiarchy

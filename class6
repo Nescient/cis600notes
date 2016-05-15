@@ -1,0 +1,195 @@
+# Wed Feb 10 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+---------------------
+proof for additivity and continuity:
+
+I(x) = I(x^.5 * x^.5)= 2I(x^.5)
+I(x^.5)=.5*I(x)
+I(x) - I(????)
+
+...
+
+
+---------------------
+let me start off with the last homework assignment (from above)
+
+some observations:
+
+so the additivity of the I function suggests strongly that it involves logorithms.
+
+f(x+y)=f(x)+f(y)  -> continueity?
+I(xy)=I(x)+I(y)
+
+
+I(x^m)=I(\product_from_k=1_to_m x) = \sum 1 to m I(x)
+
+I(x^m)=I(\P 1 \to m x) = \epsilon 1 \to m I(x) = m(I(x))
+I(x^{m/n}) = m/nI(x)
+
+I(x) = I(x^.5 * x^.5)= 2I(x^.5)
+I(x^.5)=.5*I(x)
+I(x) = I(\cappi i=1 \to 2^n x^{1/2^n})
+= \sum i=1 \to 2^n I(x^{1/2^n})
+
+---------------
+m_k/n_k convergest as k-> \inf \to some real number r
+x^{m_k/n_k} converes as k->\inf \to x^r
+
+
+a^y = f(y)
+
+I(x^{m_k/n_k}) converges as k->inf to I(x^r)
+
+rI(x)= m_k/n_kI(x)
+
+
+2^{log_2(x)} = x
+I(x) = I(2^{log_2(x)}) = log_2(x) = I(2) -> k:=-1
+
+-----------
+why are angles measured in radians?
+
+what is the derivative of sine?  of cosine?  of -sine, etc?
+
+if you dont use radians, (use degrees), when you take the derivative you will factor out the constant.
+
+we use radians to compact the sine wave on a graph.
+
+1 deg = \pi/180 radians
+
+this is the factor that gets factored out.  as you keep taking derivatives of sin, cos, -sin, etc you factor out a constant.  it exponentially goes to 0 when less than 1 radian.  if you take a factor more than 1 radian, it exploads to infinity.  the only place it is poised on a real cycle is 1 radian.
+
+this observation is strongly connected to....
+
+there is an implicit notion of radians in
+
+\integral from 1 to t of 1/x dx = ln x
+
+
+-------------------------------------------------
+wolfram's cellular automaton rule one ten
+http://mathworld.wolfram.com/Rule110.html
+
+there is a truth table for rule 110
+
+truth table:
+
+uxv  | rule| how to get rule   |
+000  |  0  |  (1-u)(1-x)(1-v)  |
+001  |  1  |  (1-u)(1-x)v      |
+010  |  1  |  (1-u)x(1-v)      |
+011  |  1  |  (1-u)xv          |
+100  |  0  |  u(1-x)(1-v)      |
+101  |  1  |  u(1-x)v          |
+110  |  1  |  ux(1-v)          |
+111  |  0  |  uxv              |
+
+the polynominal will be the sum of all hte formulas and you get:  (x+v-xv-uxv)  <-- real number addition and subtraction
+
+the product of all is 1 when they are all 1
+
+here is an exercise:
+
+p q | p \OR q | p \XOR q | p ---> q | (if and only if)
+-------------------------------------
+0 0 |    0    |    0     |    1     |
+0 1 |    1    |    1     |    0     |
+1 0 |    1    |    1     |    0     |
+1 1 |    1    |    0     |    1     |
+
+
+the polynominal for each of the three above is:
+
+\OR = (1-p)(1-q) + (1+p)(q) + (p)(1+q) + pq
+    = 1 - p + 1 -pq + q +pq + p +pq +pq
+    = p + q - pq
+
+\XOR = 
+     = 
+     = p+q-2pq
+
+\iff = ?????
+
+
+---------
+imagine polynominals where the indeterminates dont commute.
+
+it turns out that the problem of factoring quantum states is exactly this special case of looking at polynominals in which the indeterminates dont ...something.
+
+
+400 cell ring.  inialization was originally 0,1.
+the binarize method truncates to the nearest diatic fraction.
+initiallly starts with all 0 and then the middle one is set to 1.  this makes the picture from the website.
+
+the interesting part of rule 110, are the trianglular structures.  you can set up little initial configurations so that various things get accomplished.
+
+it was wolframs contention that all laws of physics are computable and, consequently, all rules of physics are contained in rule 110.  it is contraversial.  i dont think blair believes it.
+
+---
+so what does this have to do with the assignment.
+
+if he asked us to compute, starting with the same initalization of the array.
+and we have to estimate teh shannon entropy.
+
+we would look at three adjacent cells which would be a column of 3 cells running all the way down.  you would wait a while for transients to settle out.  you would throw away the first 500 computations.  between 500 and 2000 iterations.
+
+from that point on, for just that 3 cell column, you would count the number of times each of the 8 possible sequences of the 3 cells:
+
+0
+0
+0
+
+or
+
+0
+0
+1
+
+or
+
+....
+
+do this over 2k iterations.
+
+the initial configuration probably has alot to do initial configuration.
+
+
+---------------------
+the really embarrassing situation for thermo dynamics.
+what happened since yesterday at noon?  here in syracuse.  we have some idea of what is going on.  that is one scenario.
+
+the other:  everything came into existsence a few seconds ago.  memorys, laws, etc.  and everything arranged the way it was 5 seconds ago.  and evolved to now and will continue.
+
+does the world really have any prior history?
+
+it turns out with thermodynamics, the 5 second scenario is significantly more likely.
+
+at the big bang, the entropy of the universe would have to be muuuch too low.  it has been increasing ever since.
+----------------
+
+
+count the realive frequency of each one occuring.
+
+then do it with random initialization.  do it with different rules.  and see how it varies.  redo it with a different column.
+
+calculate teh shannon intropy for this.  look at the continuous shannon entropy.
+
+dont have to do it for all the columns.  just pick a few columns.  maybe venture out a different radious so you get a few more (larger than 3).
+
+the three values are the row.
+
+----
+with a random initialization is that it gets pretty dull after a while.
+
+
+-------------
+important:
+something about how the world is.  actual tye reality.
+
+the sequence of 1s and 0s being produced by the random number generator in java.  there are a lot of runs.  real random sequences are actually like that.  there are sublocks in that that ahve a lot of runs.  even though there is a low probability it will happen.
+
+talked about how to spot fake tax returns.  are there certain patterns that occur that are improbable.  and if it doesnt see that, it flags it for investigation.  people who make it look realistic put money amounts down in the slots that they think look realistic.  they dont ever write down rounded values at 500 say.
+

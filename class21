@@ -1,0 +1,143 @@
+# Mon Apr 11 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+a number of people have asked about topics.  anything having to do with basean methods in AI.  you can also do anything suggested to you with related to the reading of bostroms book.  which is essentially everything in modern AI.
+
+a list of topics:
+* Belief revision
+* Marginal probabilities (same thing as conditional probability?)
+* Theory:  for instance, math topics related to intelligent behavior
+* Default logic
+* Prolog, LISP  - lisp would enable you to think things you couldnt think without knowing the language
+* Philosophical Prostentatoin a'la Bastian
+* Quantum computing & machine intelligence (whether quantum computing is ever achieved, he doesnt know)
+* quantum communication is a reality now.  sending bits using quantum channels.  the advantage is not speed, it is security.  however, there has been an attack developed.  there is a spoofing protocol.  you can destory the message and trick the receiver into thinking you sent it. this is very hard though.  what is now depends upon how you are moving.  but you can do instaneous communication.  it is very expensive to do this.  you have to destroy the entagled pair.  it is expensive to produce enough entangled pairs and ship them out.
+
+someone already sent in deep learing and multilevel neural networks.  they have priority.
+
+* neural networks.
+
+shendefroud?
+shenstuft - german word.  has to do with feelings.  what people identify was a part of this feeling.  said to be untranslatable.  no single or small phrase that captures the full meaning.  would need to write a dissertation.
+
+https://en.wikipedia.org/wiki/Bayesian_programming
+
+\aside{we are the speciies that makes and uses tools.  doesnt work.  we are the species that are tool weilders.  we can make an infinite number of tools out of other tools.}
+
+there is something like DARPA called IARPA.  the I is information or infomatics.  what DARPA is for defence, IARPA is for intellegence community.  there is a woman dealing with quantum mechanics. long career at mit doing this.  for about fifty years, commercial hydragyn reactors are about 25 years out.  and now she is working on quantum computing.  haha.
+
+-----------
+look online for IJCAI (internaltional joint conference of artifical intellegence).  KR
+
+* Satisfiability - this is a component of engines that do logical reasoning.  SAT is NP complete.
+
+TARK - something something something Knowledge
+Theoretical Aspects of Rationality and Knowledge
+
+
+* In general, look online for a program associated with AI conferences, you can get an idea of what kinds of topics you can do.
+
+
+another thing you can do, figure out on a mac animations (crud animations like for the CA) in windows with working scrollbars in java.  a how-to talk.
+
+-------------------------------
+what he wants to talk about today is Doxastic Logic
+
+https://en.wikipedia.org/wiki/Doxastic_logic
+
+Dox has to do with belief
+
+Doxastic Logic is strongly related to Alethic modal logic
+https://en.wikipedia.org/wiki/Alethic_modality
+https://en.wikipedia.org/wiki/Modal_logic#Alethic_logic
+
+If p is true, is p necessarily true?
+
+what is this notion of necessary and possible truth?
+
+truth comes in modes.  you have necessary truth, possible truth, and truth.
+
+--
+in the 1940s there was this problem that the air force had.  something about neucliar.  strategic air command.  they found out that there was a puzzle that they could abstract the problem to.  they put the puzzel in the paper (omaha nebraska) to see if anyone could figure it out.  there was a highschool sutdent Saul Kripke that solved this puzzle.  he acquired immediate fame for this.
+
+he got snapped up to a university and they told him to let them know when he is ready for the disseration.  what he did for his disseration was to make necessarily true mathmatically rigoroouys.
+
+\asize{in a beautifiul mind, there was a pillar with a door on it.  or something.}
+
+
+he reasoned like this.  i want to know if something is possibly true.  it might not even be true in this world.  maybe we make some arrangements to make it true.
+
+the worlds that are a little different than this one are nearby possible worlds.  he thought of the possible worlds arranged in a network of some sorts.  and now you have a directed graph.
+
+to write down logic, youhave to know what hte non-logical symbols mean.  logical symbols are NOT, AND, OR, logical equality, etc...
+
+\forall x [h(x) -> m(x)]
+\foreach x [p(x ^ c(x))]
+\forall x \foreach y [p(x,y)^\foreach z[\forall x p(z,x)]]
+\foreach x \foreach y [\not(x=y)^ \forall z [z=xUz=y]]
+
+when you specify these meanings you have to specify their relations
+
+saul reasoned like this:
+if i can go from one structure (he called them worlds) in one step are the worlds that are accessible from that world.  accesisble in one step.  the possible worlds of interest.
+
+for something to possibly be true is true in at least one possible world.  something is necessarily true if, no matter what world you go true from this world, it is true there as well.
+
+which modal logical formulas involve necessary truth and possible truth.
+
+if p is necesarrily true, is it the case that p is necessarily necessarily true?
+
+[]p->[][]p (where box is the necessary operator)
+
+\aside{https://en.wikipedia.org/wiki/Logical_truth}
+
+nondetermanism for nondetermanistic algorithms....
+it is usually easier to create a nondetermanistic algorithm for a given specification and then port the algorithm to a determanistic one.
+
+one of the immediate applications of possibility and necessity is
+<\beta_0>A -> [\alpha]A
+if you start in state beta0 with A true any running program alpha will make A true.
+David Harel, Dynamic Logic
+
+---------------
+now he will exhibit another modal operator: belief.
+
+stanford encyclopedia of philosophy
+http://plato.stanford.edu/
+
+https://en.wikipedia.org/wiki/Doxastic_logic
+
+----------
+references for modal logic:
+brian chellas modal logic
+huges & chresswell: modal logic
+----------
+
+raymond smolynd or osmething.  how to characterize reasoners and levels of rational.
+
+https://en.wikipedia.org/wiki/Doxastic_logic#Types_of_reasoners
+
+it is contraversial that for any possiblity that is necessarily true it is possibly true
+
+----
+a person defending being a "flip-flopper" said that "when the information i have about the facts change, i change my mind.  what do you do?"
+
+epistemic logic?
+
+no logical agent that is capable about reasoning about number theory can proove its own consistency.  lucus (famous philosopher) had a proof that we cant build machines because we cant be consistent or something.
+
+could intellegence be immortal in the following sense:
+it turns out that now adays people in physicls beliefe the universe it will never end.  it will just continue to decay and get ultra cold and thinner and such.  keep expanding.  but it will never quite reach its asymtotic death.  can intellegence suvive this?  the answer is yes, but it will go slower and slower and slower in its reasoning.
+
+could it still run fast enough to believe bigger and bigger propositions?  it will just take longer and longer to believe things.
+
+the convential view is that nothing can go faster than the speed of light.  take something that is less than the speed of light, but keeps accelerating.  can you accellerate faster than it, but never catch it?
+
+the things that are really far away are moving away from us faster and faster and we are about at the point where we can launch something to catch them.  after this, we will have no chance.
+
+the reasoners above are ideals.
+
+there are no physical holograms.  a true hologram would represent things at arbitrary small scalls.
+

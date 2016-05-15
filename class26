@@ -1,0 +1,183 @@
+# Wed Apr 27 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+alberto rivera
+
+machine learning methods:
+
+how driverless cars learn to drive
+
+what is machine learning
+field of study that gives computers the ability to learn without being explicitly programmed - arthur samuel
+
+subfield oc comp scie that eveolved from pattern recognition.  explores algorithms that can learn from and make prediction on given data.
+
+popular approaches to machine learning (ml)
+* supervices learning
+*unsupervices learning
+*semi supervices leanring
+*reinforment learning
+*decision tree algorithms
+*bayesian algotrhithms
+*artifical neaural networks
+*deep learning
+
+##supervicesed learning
+the dataset has to be labled.  it is used as the training set.  every sample set is a pair between input and output
+the algorithm analyzes the input and output to produce an inferred function to map new inputs
+
+##unsupervised learning
+algorithm  is given is unlabled data.  it isnt told the pictures are chairs, it just figures out what images have characteristics in common.  there is no error/reward signal since the input is unlabled.  it tries to summarize and explain the input
+
+## semi-supervised learning
+
+input data is a mix of labled and unlabled data with a large amount of unlabled data compared to labled data (usually).
+
+some scientists were trying to characterize glaxies by images but htey had too many so they made a website and croud sourced it.
+
+useful when the cost of labeling all of hte data is too high.  image classification.
+
+often procivesd betere results that using fully unlabled.
+
+##reinforcement learning
+reward given to aid in learning.  a reinforcement signla.  the agent selects an action that will maximize the reward int he long term.  agents automatically determine ideal behaviors iwthin a specific context.
+
+good for game training (tic tac toe)  loosing is negative feedback and winning is positive feedback.
+
+
+## driverless cars
+george hotz uses a four level driverless car system.
+level 1 - cruise control.
+lvl 2 is adaptive cruise control.
+lvl 3 is 99% automation, autosteer
+lvl 4 is 100% automation, no people
+
+2005 darpa grand challenge
+the goal of the challenge was to devleop an autonomous robot capable of traversing unrehearsed offroad terrain
+
+in 2004 $1 million prize was set oft he team whose robot completed the 142 mile course along the mojave desert first
+
+none of the team completed more than 5% of the course
+in 2005 challenge was repeated with a new prize of $2million
+
+stalnley was made by standford university was first to finish with a time of 6h:54m
+
+stanley usees discrimantive learning algorithsm to optimize the parameters for terrain analysis on labeled data
+the data is labeled through human driving
+
+parameter tuning
+blue the area traversed by the vechhilblce is lbabled as drivable
+red the two strimes at a fixed sitance to the lefn adn right are labled as osbstiacles red
+green is unlabled data
+while these labels are onlay approximate, they are very easy to obtain and significantly improve the accuracy of hte rsulting map when used for parameter tuning.
+
+everything they have already driven over is labeled as good since htey drove over it.  just outside that area is considered obsticales.  green is unknown.
+
+"the pervasive use of machine leanring boht ahaead and during hte race made stanley robust and preceise.  we believe that those techiniques along with the extensive testing that took place contributed significantly to stanleys success in this race.  - thurn 2005 stanley: the roboto that won the parpa grand chanllenge.
+
+10 years later, tesla autopilot
+
+tesla cars are factory equipped with an array of sensors that allows htem to see and analyze the enviornment around them.
+
+an update to the cars firmware enabled an autopilot mode.
+
+the car is able to autosteer, auto lane chang,e avoid collisions, homelink and summon.
+
+fleet learning
+teslas are constantly communicating with remote servers that receive the cars sensor information
+as humans driver their cars, they are creating training data that the car can use to learn how to drive on its own
+each car feeds its information to hive mid, so the whole fleet learns from each individual vehicle.
+
+machine learning advantages
+applying machine learning techinques to autonomouse vehicles, enables them to learn and act in the way that humans do.
+this approach is more efficient and effective than a tem of engineers idea of driving and safety.
+
+--------------------------------------------------------------------
+timothy hanrahan
+learning with bayesian networks
+
+overview
+*background
+*parameterizing linear models
+*causal structure for linear models
+*parameterizing discrete models
+*learning causual structure for discrete models
+
+bayesian networks are causal models and in general assume the markov property.  condistional independence.  literabllly each child in the tree is caused by the parent.
+
+a) causal chain  0->0->0
+b) common cause  0<-0->0 (middle is parent of other two)
+c) common effect 0->0<-0 (middle is child of other two)
+
+common cause and markov equivalence
+principle of common cause (reichenbach) - if two variables are probabiliisticall dependent, then eithe rone causees the other ot hey hav ea commond acnestor.
+
+markov equivalence - bayesian networks are markov equivalent if they contain the same variables and produce the same probability distributions.
+
+(X)->(Y)->(Z)
+(Z)->(Y)->(X)
+
+any two variables that contain the same v-strucuture (#c from above) are markov equivalent
+
+linear models
+linear models are linear in the parent variables
+the child variable can be written as a linear combination of hte parents
+
+Y = a1X1+a2X2+U
+
+ai describes the extent to which Xi influences Y
+
+U represents the cumalatlive effect of uknonw variables 
+
+correlation in linear models
+
+wrights first and second decomponsition rule
+
+\aside{the practical casusality something something : who should be sued}
+
+causal structure of linear models
+number of acausal models f(N) is exponential in the number of variables, N
+five variables have 25000 possible models
+this make sit generally impossible to search and test all possible causal structures.
+
+ci algorithm
+let x,y \elementof V then x and y are directly casuall connected iff for every s \subset v such that x,y \notelementof s - (x|_|y|s)
+...
+
+https://en.wikipedia.org/wiki/Computational_intelligence
+configuration interaction algorithm??
+
+PC algorithm
+
+ci algorithm cant be implmeneted or something so the pc algorithm is implemented.
+
+begin with the fully connected skeleton model.  so some other stuff.
+
+deseperation method is used
+
+ci vs pc algorithsm
+both are similar.  the ci assumes perfect knowledge of conditional indpeendnceisn int he networ.k.  the pc algorithm checks partial correlations instead o frelying on sassumged knowledge.
+
+discrete models.
+
+binomial parameterization.
+
+multinomial parameterization.
+
+gibbs sampling altorithm.
+
+expectation maximization algorithm.
+
+gibbs and em comparison
+
+both algorithms depend upon independence assumptions on the unknown variables.
+
+gibbs sampling algoirthm has requiremetnst to achiceve convergence while em does not.  from any psosible state i t must be possible to sampel any othe rpossible state.  each value fro an unobserved variable is chosen equallyoften.
+
+both assume that the causal structure is known.
+
+k2 algorithm.
+
+cooper and herkovits therorem
+

@@ -1,0 +1,165 @@
+# Mon Feb 01 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+Shannon entropy
+
+https://en.wiktionary.org/wiki/Shannon_entropy
+
+you have a bunch of possible independent events that occur with a certain probability distribution.  what you like to know is the expected number of yes/no questions you have to ask to figure out ...something.
+
+probability of two independent events occuring is the product of each of the events seperately.
+
+* a number of independent events
+* what expected number of yes/no questions that must be asked
+-> determine which event occured
+
+(epistemic probability)  alternative:  ontological notion of probability
+
+if he takes out a single card from a fairly shuffled fair deck of cards removed fairly and such.  1/52 that he chose the jack of diamonds.  he knows he got the jack of spades so it was a 0 probability.  this is epistemic.
+
+ontological is that the universe is nondetermanistic.
+
+we have this logical device that outputs one of four things:
+
+\alpha \beta \gamma \delta
+
+with probability
+
+1/2 1/4 1/8 1/8
+
+how many questions do you have to ask to figure out what came out?
+
+lets represent the symbols with bit strings:
+
+00 01 10 11
+
+organize as a tree:
+
+                    /  \
+                  /      \
+                 /\      /\
+                /\/\    /\/\
+                ----    ----
+               \alpha   \beta, \delta, \gamma
+
+representing it this way, means you have to ask .875 questions (as opposed to the normal 2):
+
+1*1/2 + 2* 1/4 + 3 *(1/8 + 1/8) = 7/8
+
+expectation = p_1(ask 1 question) + p_2(ask 2 questions) + p_3(ask 3 questions)
+
+
+if you flip a coin, how many questions do you know what it is?  1
+
+what if 3/4 it is heads, and 1/4 it is tails.
+
+monte hall problem
+https://en.wikipedia.org/wiki/Monty_Hall_problem
+
+changing your mind to the other door causes you to win 2/3 of the time and 1/3 if you stick to the same door.
+
+which is more likely, a random student in english class gets a bad grade or a random native english speaker gets a bad grade.
+
+p(E_1) vs p(E_1^E_2)  where ^ is the intersection
+
+E_2 = student is native english speaker
+E_1 = student will get good grade
+
+
+intersection is harder to statisfy in general
+_______
+|_|_|_|
+|_|_|_|
+|_|_|_|
+|_|_|_|
+
+what is the chance that any light bulb will light?  it is 1/12
+
+here is an event:  a light bulb lights up
+another event:  the lower left bulb lights up
+one of the started ones light up:
+
+|_|_|_|
+|_|_*|_*|
+|_|_*|_|
+|_*|_|_|
+
+
+probabilities:  any light up is 1/12, bottom row is 1/4, one of the stars is 1/3.
+
+what is the probability that the lower left corner lights, given the event that the bottom row lights up?  1/3 (you know the bottom row lights up, so it could be any one of the 3)
+
+given the bottom row lights up, what is the probability that the stared box lights up?  1/3
+
+
+since the stared box event and the bottom row event have the same probability, they are probabilitisticly independent.  but they are not logically independent.
+
+vinn diagram**
+
+the box has probability 1.  it is the universe.  what is the probabilit of E intersect F?  it is the area of where the two circles overlap.
+
+p(E^F)
+
+what is the probability of E, given that F occured?
+
+p(E|F)
+
+with the intersection, you want to know the proportion of the intersection versus the universe.  knowing f occured, you want to know the proporation of hte intersection vs the probability of F:
+
+p(E^F)/p(F)
+
+p(E^F)
+------  = p(E|F)
+ p(F)
+
+
+ a paper submitted, he made a remark about a definition being an axum.  definitions are just axioms.
+
+given a right triagle:
+
+what is the area of the square related to the triangle.
+
+area(\square) = f * area(\triagle)
+
+a^2 + b^2 = f * 1/2 * a * b
+
+f = a*a+b*b/.5*a*b
+
+add a perpindicular and you get three similar triangles.
+
+
+going back to the coin flip problem:
+
+
+
+an exercise to do for next time:
+
+the informational uncertainty (I) of an event E given by I(E)
+is solely dependent on the probability of E:
+I(E) = I(prob(E))  <--- observation #1
+
+if I have two independent events E_1 and E_2, the combined event:
+I(E_1*E_2) = I(prob(E_1*E_2)) = I(prob(E_1)*prob(E_2)) = I(prob(E_1)) + I(prob(E_2))
+
+Two events E_1 and E_2 are \uscore{probabilistically independent} if and only if prob(E_1|E_2) = prob(E_1)
+
+(iff prob(E_2|E_1) = prob(E_2))
+
+theorum:  E_1, E_2 are prob indepent iff prob(E_1^E_2) = prob(E_1)*prob(E_2)
+
+in summary:
+I(pq) = I(p) + I(q)
+
+max I occurs where p = q = 1/2 and I is continuous.
+
+observation #2:  I(E1^E2)=I(prob(E1^E2)) = I(prob(E1)prob(E2))=I(prob(E1))+I(prob(E2))
+
+f: R->R
+f(x+y)=f(x)+f(y)
+f(ax)=af(x)
+
+if you go from a 1/2 fair coin to something that will always be heads, you go from having to ask 1 question to having to ask 0 questions.  as you slide smoothly, how does the expectionation of hte number of questions you need to ask.
+
+basean reasoning is how your probability distribution changes as you get more and more information.

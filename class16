@@ -1,0 +1,181 @@
+# Wed Mar 23 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+he brought up the wikipedia article for bayesean network
+https://en.wikipedia.org/wiki/Bayesian_network
+
+he doesnt know of a better book than korb and nicholson but it certainly isnt super good.  he thinks the wikipedia article is pretty good.
+
+second site is http://www.ee.columbia.edu/~vittorio/Lecture12.pdf
+
+go through these two resources on our own.
+
+the commas can be thought of as intersections of events.  why do they use commas?  typically these events come from different probability spaces.  you regard it as subsets of each U cross the other Us.
+
+P(S, C, B, X, D)
+
+S cross U2 cross U3 cross ...
+C cross U1 cross U3 cross ...
+
+  U2
+  |
+Y |   []
+  |
+----------- U1
+      X
+
+
+is there a subset of the natural numbers where A X B = {{0,0},{1,1}}
+
+consider \N \cross \N where \N = natural numbers
+Note that {(0,0),(1,1)} is a subset of \N \cross \N
+do there exist A,B \subset \N such that AxB = {(0,0),(1,1)}
+
+such A and B do not exist.  why?  because both 0 and 1 have to be in A and in B therefore, the pair (0,1) has to be in AxB.  contrudiction
+
+--------------
+the order will turn out not to matter in the paranthasis, but the expressions will change (the results should stay the same).
+!!! lies!!!!  it will actuall change because you have to do it based on the parents.  see below.
+--------------
+
+X6 <-- X4 <-- X3 --> X1 --> X6
+
+ V-X3-V
+ X4  X1
+ |>X6<|
+
+P(X1, X2, X3, X4) = P(X1^X2^X3^X4)=
+
+P(X1|X2,X3,X4)
+*
+P(X2|X3,X4)
+*
+P(X3|X4)
+*
+P(X4)
+
+given the "topology" of the graph, we can eliminate some of this expansion.
+
+the network must be in the same order as given by the P(...,...,...)
+so lets try again:
+
+P(X1, X2, X3, X4)
+=
+P(X1|X2,X3,X4)
+*
+P(X2|X3,X4)
+*
+P(X3|X4)
+*
+P(X4)
+
+X1 <- X2 <- X4   X1 <- X3 <- X4
+
+this lets us cancel some:
+P(X1, X2, X3, X4) = P(X1|X2,X3)P(X2|X4)P(X3|X4)P(X4)
+
+------------------
+if you write out the chain rule and all you have are the probabilities of the primative events,
+
+if you change the net graph, but keep the same priors, you get something that might not make sense.  so if you cahnge the order you have to change the tables?
+
+--------------
+
+back to above, we simplify by making it only depend on the parents.  write down the product of the conditional probabilities given to you by the network.
+
+when you write down the givens, you only need to write the parents.
+
+right it down from right to left:
+P(S,C,B,X,D) =  P(D|what are the parents) -> P(D|C,B).  keep doing this to get:
+P(S)P(C|S)P(B|S)P(X|C,S)P(D|C,B)
+
+-----------
+down to slide 17 and look at wikipedia to explain it a little
+
+P(X1|X3)?
+
+well, there are variables between X1 and X3.  these are called nuisance variables.
+https://en.wikipedia.org/wiki/Nuisance_variable
+
+so then just sum over all the possibilities for those nuisance variables.
+https://en.wikipedia.org/wiki/Bayesian_network#Example
+
+Suppose that there are two events which could cause grass to be wet: either the sprinkler is on or it's raining. Also, suppose that the rain has a direct effect on the use of the sprinkler (namely that when it rains, the sprinkler is usually not turned on). Then the situation can be modeled with a Bayesian network (shown). All three variables have two possible values, T (for true) and F (for false).
+
+The joint probability function is:
+
+    \mathrm P(G,S,R)=\mathrm P(G\mid S,R)\mathrm P(S\mid R)\mathrm P(R)
+
+where the names of the variables have been abbreviated to G = Grass wet (yes/no), S = Sprinkler turned on (yes/no), and R = Raining (yes/no).
+
+The model can answer questions like "What is the probability that it is raining, given the grass is wet?" by using the conditional probability formula and summing over all nuisance variables:
+
+    \mathrm P(\mathit{R}=T \mid \mathit{G}=T) =\frac{ \mathrm P(\mathit{G}=T,\mathit{R}=T) } { \mathrm P(\mathit{G}=T) } =\frac{ \sum_{\mathit{S} \in \{T, F\}}\mathrm P(\mathit{G}=T,\mathit{S},\mathit{R}=T) } { \sum_{\mathit{S}, \mathit{R} \in \{T, F\}} \mathrm P(\mathit{G}=T,\mathit{S},\mathit{R}) } 
+
+Using the expansion for the joint probability function \mathrm P(G,S,R) and the conditional probabilities from the conditional probability tables (CPTs) stated in the diagram, one can evaluate each term in the sums in the numerator and denominator. For example,
+
+    \begin{align} \mathrm P(G=T, & \,S=T,R=T) \\ & = \mathrm P(G=T\mid S=T,R=T)\mathrm P(S=T\mid R=T)\mathrm P(R=T) \\ & = 0.99 \times 0.01 \times 0.2 \\ & = 0.00198. \end{align} 
+
+--------------------------------------------------------------------------------
+take two random variables, X and Y
+what is the probability P(X=1)
+
+= P(X=1^Y=0) + P(X=1^Y=1)
+U={Y=0}U{Y=1}
+
+P(X)
+U=A1 \union ... \union An
+
+P(U)=P(A1)+...+P(An)
+
+X = X^U = X ^ (A1 \union ...)
+= (X \union A1) ^ .... ^ (X \union An)
+
+------------------------------
+you can get subvalues by filling in the nusance variables.
+
+-------
+he wants to do something "quite elementary":
+
+
+P(X|Y=T), T:.9, F:.2
+
+Y probabilities:
+T: 0.9
+F: 0.2
+
+---------------
+ 0 | 0 | 0 |   
+---------------
+ 0 |01 | 01| 1 
+---------------
+   | 1 | 1 | 1 
+---------------
+   | 1 | 1 | 1 
+----------------
+
+P(0|1)= 2/9
+P(0|!1) = 4/7
+
+these do not add to 1 (0.793650794)
+
+P(1|0)+P(!1|0) = 1
+
+\aside{reduce things to the smallest thing to help give you insight or make it super complicated}
+
+P(P^O)/P(O)+P(!P^O)/P(O)=P(O)/P(O)=1
+
+------------------
+
+select something that you can present.  related to korb and nicholson.
+
+su is about to be middlestate accreidation.
+this can determine your starting salary.
+
+
+presentations and design work for students is good for accreditors.
+
+
+
+deep learning tutorials.

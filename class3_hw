@@ -1,0 +1,21 @@
+if you flip a coin with a 3/4 probability of heads and 1/4 probabiliyt of tails, how many questions do you need to ask to figure out what the value is?
+
+lets say you flip it 4 times.  now you must think that 3 of them are heads and 1 is tails, but you dont know which ones.  so we are back to the problem of having four possible values and figured out which value is the current one.
+
+arrange it like the tree:
+
+                    /  \
+                  /      \
+                 /\      /\
+                /\/\    /\/\
+                ----    ----
+               \alpha   \beta, \delta, \gamma
+
+representing it this way, means you have to ask .875 questions:
+
+1*1/4 + 2* 1/4 + 3 *(1/4) = 6/4
+
+well, that doesnt help any....
+
+but if i ask if the tails was in the first two, then ask exactly which one it is, then im down to 3 questions for every 4.  can we do better?
+

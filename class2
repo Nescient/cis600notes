@@ -1,0 +1,107 @@
+# Wed Jan 27 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+started by showing us his implementation of the henon display
+
+best book on linear algebra and its applications by gilbert strange.  he taught linear algebra to people at mit.
+
+paper:  a comparative study of compuation of lyapunov spectra with different algorithms.  by k ramasubramanian and ms sriram.
+
+gram-schimdt reorthonormalization (gsr) procedure
+https://en.wikipedia.org/wiki/Gram%E2%80%93Schmidt_process
+
+ljuponov = lyuponov (its german)
+
+....
+
+if it shrinks, you get an expansion factor less than 1, if it increases you get an expansion factor greater than one.
+
+you have your real point and a simulated error point.  then itereate once and you real point will move as will the error point.  take the distance between each as a fraction for the expansion factor.
+
+the total error that is accumulating is the product of all of the errors (fractions).  it is easier to get the log of these values.  adding these logs....
+
+take the derivative of the henon formula with respect to x and respect to y:
+
+1 - ax^2 + y
+bx
+
+DH(x, y) = ( -2ax  1 )
+           (   b   0 )
+
+
+this matrix is :  [d/dx d/dy]
+                  [d/dx d/dy]	
+
+if you look at the tiny error vector (the radius of the circle around x,y).  if you look at that small vector, and you apply the derivative of H to that vector, and you look at the image of it.  the image of that error vector will be a very good approximation of the error vector that you get in the first wave of the derivative.
+
+(-2ax * dx + dy, b*dx)
+
+this is a very good approximation of the error vector that you would get if you made x,y error so close to x,y.
+
+the above formula divided by (dx, dy) is the approximation factor.
+
+( -2ax  1 )( dx ) = ( -2ax*dx + dy)
+(   b   0 )( dy ) = (  b*dx       )
+
+calculate:
+
+a = 1.4
+b = 0.3
+
+[ x ]  =  [ 1 ]
+[ y ]  =  [ 0 ]
+
+[ x ]  =  [ dx ]
+[ y ]  =  [ dy ]
+
+dH [dx]
+   [dy]
+
+(peitgen wrote some book or paper or something about this)
+
+[1 3] [\pi] = [-\pi+3 ]
+[7 2] [ 1 ] = [7*\pi+2]
+
+[1 3] [100*\pi] = [-100*\pi+300] = 100* [-\pi+3 ]
+[7 2] [ 100*1 ] = [700*\pi+200 ]  =     [7*\pi+2]
+
+[1 3] [\alpha*\pi] = \alpha* [-\pi+3 ]
+[7 2] [ \alpha*1 ] =         [7*\pi+2]
+
+you get teh same amplification factor if you set the length of (dx,dy) to 1.  typically you take the (dx,dy) to be one away in an orthoginal direction.
+
+H(x,y)= [1-1.4x^2+y]
+        [.3y       ]
+
+dxdy = [-1.4]
+       [.3]
+
+what i will do for monday:
+
+do one iteration by hand, starting with dx,dy:
+
+[dx] = [1]
+[dy] = [0]
+
+[x] = [1]
+[y] = [0]
+
+calculate what H does to each of the above.  this will get the error factor.
+
+1. set x,y to 1,0
+   set dx,dy to 1,0
+
+2. calculate H[x,y] using a=1.4, b=0.3 where H[x,y]=[1-1.4x^2+y,0.3x]
+3. calculate ||dH[x,y]||:
+
+length[x,y]=sqrt(x^2+y^2)
+
+------ i think:
+1-1.4(1)^2+0, 0.3(1) = -0.4, 0.3
+
+answer:
+
+dH = [-2.8 1][1] =[-2.8]
+     [ 0.3 0][0] =[ 0.3]

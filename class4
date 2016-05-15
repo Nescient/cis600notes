@@ -1,0 +1,224 @@
+# Wed Feb 03 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+https://en.wikipedia.org/wiki/Entropy_%28information_theory%29
+
+I: Inforation "measure" determined by the probability of an event.
+
+aside:
+An event is a subspace of a probability space.
+Probability space is a set and a mapping from the power set of that set to {1,0} that satisfies certain properties.
+Probability of the whole space is 1, probabiliy of empty set is 0
+
+supposed the occurance of an event has a certain probability of happening (p) and you found out it happened, so you get so many bits of information learning that it did occur.
+
+you get so many bits of infromation and another event with probability (q) occurs.
+
+how many bits did you get with the additional information? how many total bits do you get?
+
+you find out event E occurs and event F occurs.
+
+by finding out that both events occured, when the events are independent, how much much information did you get by find out F occured?
+
+p(E) = p, p(F) = q, p(E^F)=p(E)*p(F)=pq
+
+the probabilit that both occured, is the multiplication of the two probabilities.
+so the information that both occured, shoudl really just be a function depending on their probabilities:
+I(E^F)=I(p(E^F))=I(p(E)*p(F))
+
+since we only want the information added to be incremental, it has to be whatever we already have about E plus the new stuff for F, thus:
+I(E^F)=I(p(E)*p(F))=I(p(E))+I(p(F))
+
+a physicist named goldsmen came up with this stuff  (or maybe boltzmann)
+
+https://en.wikipedia.org/wiki/Measure_%28mathematics%29
+
+you can take a sphere and cut it up into five pieces, none of which have a defined volume, and then you can rearrange the 5 peices into two spheres that each individually have the same volume as the original sphere.
+
+^^^^^
+https://en.wikipedia.org/wiki/Banach%E2%80%93Tarski_paradox
+
+the standard model of three dimensional euclidean space has this property and there is something wrong with that given our model of three dimensional space.
+
+the distinction between a rational and irrational number.  the legend which happened to the guy who threatened the pythagorean .
+
+the ultimate substance of hte universe is information.  the universe is made up of information.
+
+pythagoreans thought that all things were made of numbers.
+
+given a square with side l, the diagonal is of length l*sqrt(2).  thus there must be some number of small things that make up l.
+
+k*\bflat = l
+m*\bflat = l*sqrt(2)
+
+(k*sqrt(2))*\bflat=l*sqrt(2)
+m*\bflat=l*sqrt(2)
+
+k*sqrt(2)=m
+
+sqrt(2)=m/k
+
+2=m^2/k^2
+
+if there are no factors of 2 in it, then it is odd.  and an odd number squared is odd.
+if there is a factor of 2, it is even and its square is even.
+
+m^2 = 2*k^2 so we know m^2 is even and thus m must be even.  also, it tells us that there are an even number of factors in m^2.
+if k^2 was even something something something they cannot be equal to each other given the number of factors of 2 is more in k, but k must be even, so it has to have an even number or osmething, thus this whole thing doesnt work.
+
+
+
+
+given a unit box, some points inside will be rational and some will be irrational.  for instance, an x corrdinate of sqrt(2)/2.
+
+the infinitude is cardinality.
+
+
+every subset of euclidian space that has countable cardinality has measure 0 (0 area).
+
+
+if you take a set of numbers strictly greater htan 0 and less than 1 there is no least element.   you can keep gettign smaller and smaller real numbers.
+
+something about well ordering.
+
+read about measure theory.
+
+the continuum hypothesis.
+https://en.wikipedia.org/wiki/Continuum_hypothesis
+
+
+
+https://en.wikipedia.org/wiki/Ludwig_Boltzmann
+
+back to the start, if you change the probability a little, the information only changes a little.
+
+there is something you should think about:  what does continuity mean?
+
+"f lim = lim f"
+means:
+
+some sequence which converges:
+
+x_1, ..., x_n -> x
+
+then
+
+f(x_1), ..., f(x_n), ... -> f(x)
+
+
+
+---------------------
+
+
+f: \reals -> \reals  (let R = \reals)
+f(x+y) = f(x)+f(y)
+f(rx) = rf(x)
+
+does line 116 imply 117 (the first imply the second?)
+
+
+
+let x = 1/n + ... + (1/n)x  (<--where you have n of them)
+
+f(x) = f((1/n)x+...+(1/n)x)=f((1/n)x)+...+f((1/n)x)=nf((1/n)x)
+  |
+  |> 1/n * f(x) = f((1/n)*x)
+
+f(mx)=f(x+x+x....) = f(x)+f(x)+...=mf(x)
+
+f((m/n)x) = mf((1/n)x)=(m/n)*f(x)
+
+https://en.wikipedia.org/wiki/Archimedean_property
+
+a squence of small numbers will eventually exceed a larger one.
+
+
+suppose we have some real r
+
+take a integer value k that is so larger than r that its negative is less than r
+
+-k                r                k
+
+keep dividing by two to figure out where r is (to get a k value close to r)
+
+----------
+
+every real number between 0 and 1 can be written as:
+0, b_1, b_2, b_3, ..., b_n, ...
+
+given 0.9999999999 = 0.9\bar = 1,
+
+0.1111111111 \binary
+= 0.1\bar
+= 1
+
+you can approximate a real number as a diverging sequence of diatic fractions or something.
+
+alan turing.  his computer was called collosis.  no one knew about it unless they had access to classified information.
+"given a real number x" how can you be given a infinitary thing.  does that mean you have a rule to generate its decimal expansion?  read his original paper about the turing machine.
+
+gayorf cantor got set theory going.
+https://en.wikipedia.org/wiki/Georg_Cantor
+https://en.wikipedia.org/wiki/Taylor_series
+
+-----------------------------
+
+so we have this real number r and a sequence of rational numbers q where
+
+q_1+q_2+q_3+...->r
+    lim q_i = r = f(lim q_i) = f(r) = lim f(q_i) = f(r) = lim q_i*f(1)
+i->\inf            i->\inf           i->\inf             i->\inf
+
+
+f(rx) = f((lim_i->\inf q_i)x)
+      = f(lim q_i x)
+      = lim f(q_i x) = lim q_i f(x) = (lim q_i)f(x) = rf(x)
+
+
+assuming it is continuous, show me that something about times a logrithm:
+
+I(x) = klog_2(x), all x > 0
+for some constant k
+
+except you have to worry about ...something.  adapt the argument slightly.  something about we have to split up numbers in a different way.
+
+----
+
+shannon entorypy:
+
+E_1, ..., E_n
+P_1, ..., P_n
+
+the entropy is the average amount of information in the probability distribution.  it is an average weighted by probabilities.
+
+I(P_i)=klog_2(P_i)
+
+\aside{can you tell me what k is in terms of I?}
+
+P_1*I(P_1)+...+P_n*I(P_n)
+
+suppose you are in a course iwth 3 exams where the first 2 are 1/4 your grade and the final is 1/2 your grade.  lets say you get an 87, 93, and 98.  your average is 1/4*87 + 1/4*93 + 1/2*98.  the weights must add to one.  same thing with the information thing.
+
+the weights must add to one, the probabilities must add to one.
+
+P_1*I(P_1)+...+P_n*I(P_n) = P_1klog_2P1+...+P_nklog_2P_n
+  = k(P1log2P1+...+Pnlog2Pn) = H(P1, ..., Pn) -> Boltmann's constant.
+
+The possibilities of I are parameterized by the constant.  Given an I you can tell me what the constant is.
+
+the weighted average is the shannon entropy of the distribution.
+
+who do you apply this to cellular atometon.  
+
+
+
+YOU MUST DO THSI AND WRITE IT UP TO HAND IT IN.
+
+I(x) = klog_2(x), for all x > 0 for some constant k
+
+you can do it based only on continuety or something.
+
+
+additivity and cont imlie3s tne above

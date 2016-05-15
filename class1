@@ -1,0 +1,134 @@
+# Mon Jan 25 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+define techniques to heuristically find artificial life in dynamic systems.  see henon map.
+https://en.wikipedia.org/wiki/H%C3%A9non_map
+
+first assignment:  i want you to program this yourself (with collaboration).  to gain the experience to generate teh graph.
+
+this is a point progression where values are
+
+x_n+1 = 1 - ax^2_n + y_n
+y_n+1 = bx_n
+
+allow people to set the a value, b value, and initial x,y
+
+plot a point, keep it, then plot the next and so on.  this progresses into a trail like a cresent.  if (a=1.4 and b=0.3)  this is called a strange attractor.
+
+why do we care?
+
+suppose you set up this attractor and then change the corrdinate system to move the attractor somewhere else and you find a way to couple the two points so they affect the other.  this creates competing attractors.  what has been found in high dimensional dynamic systems, competing attractors (with bounded influence) tend to produce dynamic structures and they tend to be robust against damage.
+
+
+showed us a film strip (space time diagram) where the single row was a step in time.  each square on the row was dependent on itself and its immediate left and right neighbor.  it takes about 130 rows to get the roughly organized.  the rule somewhat causes a self organization to occure.  left edge is connected to right edge.  what rule caused this to happen and how do you find it?
+
+it depends on the entropy of the dynamic system and something about the exponent.  the effinon of exponents?
+
+henon lyapunov map
+
+the greatest theopinon eponent.
+
+he wanted to know whether or not, if you vary a against a steady b, does error increase or decrease.  does it propigate strongly?
+
+according to his graph, the error is being stamped out (negative values) until some value where it goes back to zero and then at some threshold it breaks to positive and then occilates.
+
+lyapunov exponent.
+https://en.wikipedia.org/wiki/Lyapunov_exponent
+
+when the lyapunov exponent (leading) is near zero and it has a (first and second) derivative thats close to zero, in that region of the rule space, is what you want.  and you want part of the region on both sides. that heuristic is where you would find artificial life.
+
+why is there life on earth?  because it has a little change and its resistent to shocks.  you can plot the entire solar system like this (as lyapunov exponent).
+
+XXXXXXX???
+
+f(x) = ax(1-x)
+x_n+1 = ax_n(1-x_n)
+
+this creates a graph that is an upside down parabola with height 1/4 a and center at 1/2 a.
+
+make a logistic map.
+
+lyapunov exponent produces the color, taking a straight light through the image will produce the spikey lyapunov exponent graph.
+
+these lyapunov graphs have an incredible amount of gemoitry.
+
+understand lyapunov exponent and entrophy.
+
+#understand lyapunov exponent
+
+x_n+1 = 1 - ax_n^2 + y_n
+y_n+1 = ba_n
+
+for programming assignment for wednesday, see what you get by varying a and b slightly.  a = 1.4, b = 0.3 and then slightly change them.
+
+
+                 *
+                 f(x_n)=x_n+1
+   *
+   x_n
+
+
+so now move slightly away:
+
+             * (~x_n+1)
+               
+
+  * (~x_n)       *
+                 f(x_n)=x_n+1
+   *
+   x_n
+
+take the ratio of the distance of the two points:
+
+\epsilon_n vs \epislon_n+1
+
+when computing the lyapunov exponent, you should do it in a specific direction.  but the above epislons may not be in the same direction.  so we move them around.  this is called a projection.
+
+to find hte applification or hte attraction factor, take the legth of the two vectors:
+
+\epsilon_x+1 / \epislon_x
+
+then do the process again and get an \epsilon_x+2
+
+to get the total factor after two iterations, multiply the two fractions:
+
+\eps_x+1 / \eps_x * \eps_x+2 / \eps_x+1 = ||eps_2|| / ||eps_0||
+
+where || = length
+
+what happens to these rations as eps_0 goes to zero?  it becomes the derivative.
+
+gecobian matrix?
+https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant
+
+the image of a sphere is an ellipsoid.
+
+gnuplot
+
+
+as eps_0 goes to zero, you will get a sphere around x_n and then the others will be eplisoids.  the directions will be eigen vectors or something.  the ellispoids will seek out an eigen basis.
+
+if you keep going out and getting \epsilons, you will find that as you progress the numerator and denominator cancel and what you will be left with is \eps_n \divide \eps_0
+
+a mathematical group is a set and a function where anything in the set applied to the function gives you back a valu in the set.
+
+https://en.wikipedia.org/wiki/Group_%28mathematics%29
+
+there are also identities (that map back to the original value).
+
+positive real numbers with multiplication form a group
+real numbers with addition form a group
+
+claim:  these two groups are the same.  they have different members, but their structure is the same.  they have a 1:1 correspondence.
+
+lets call this correspondence h.
+
+to turn a multiplication into an addition, use logorithms.
+
+to move between use logrithms and exponentiation.
+
+error accumulates really fast with multiplication.  so then we trade in the additive group for the mulitplicative group and keep track of the logrithm.  accumulate the logrithm and take the average.  the lgorithm that it settles down around is the lyapunov exponent.
+
+

@@ -1,0 +1,181 @@
+# Mon Mar 07 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+random walk exercise
+learning precise technical information
+short exercise on conditional independence
+
+-------------
+
+we can map out the sequence with 0s and 1s.  for a finaite set of moves (n) the string would be length n.
+
+lets say 0010001100011001 where n = 16
+
+0 = move to the left
+1 = move to the right
+
+the result is -4
+
+you can do this by adding up a sequence of +/- 1.  it doesnt matter the order you add these in.
+
+this can be identified by a length 16 path in the infinite binary tree.
+
+with 16 moves, how many ways are there to end up at -4?  and where do you end up given that the order you add the +/- 1s doesnt matter?
+
+# right moves - # left moves = ending point (the integer you end at).
+
+let r be the number of right moves and n be the total moves.  the number of left moves is n-r.  you end at r-(n-r) = 2r-n.
+
+lets say n is fixed at 16, how many r moves must there be to end up at -4?  2r - 16 = -4, r = 6.  how many ways are there so that the number of right moves is 6?
+
+if we have this set of moves {m1, m2, m3, ..., m16}, the number of ways to interleave these, is the number of ways to choose the slots.  for our example, the 1s are in slots 3, 7, 8, etc...
+
+how to choose 6 things out of a group of 16?  this is often written as "n choose r"
+
+( 16 )   ( n ) = number of r sized subsets of a set of n elements.
+(  6 )   ( r )
+
+-------------
+
+the exercise, what is the probability of:
+
+a <= #rmoves - #lmoves <= b
+
+a<= 2r-n <= b
+
+1/2(a+n) <= r <= 1/2(b+n)
+
+lets consider a sequence of just 4 moves.  this is to sanity check.
+
+we could make all moves to the right and be at -4.  or 3 moves to the right and one to the left to get -2 or 2 to the right and be at 0 or 1 to the right and be at 2 or 0 to the right and be at 4.
+
+r: 0  1  2  3  4
+----------------
+   -4,-2,0, 2, 4
+
+what is the probability for -1?
+
+1/2 (-1+4)<= r <= 1/2(-1+4)
+3/2 <= r <= 3/2, r has to be an integer, so there is no sequence of 0s and 1s to get us here
+
+what about -1, 1?
+
+3/2 <= r <= 5/2 ->  there is only 1 integer between these numbers:  2
+
+
+L L R R
+L R L R
+L R R L
+R R L L
+R L R L
+R L L R
+
+(4) = 4!    =
+(2) =-----  =  6
+      2!2!  =
+
+so the probablity to get back to 0 is 6/16 or 3/8.
+
+in general,
+
+the probability of the interval a,b with n moves is equal to the sum as n choose r as r varies between 1/2 a+n and 1/2 b+n divided by the total possible number of sequences
+
+Prob(In [a,b] with n moves) =
+
+                  \sum   (n)  / 2^n
+1/2(a+n)<= r <= 1/(b+n)  (r) /
+
+10 moves, interval [-5, 5]
+
+5/2 <= r <= 15/2
+
+what integers are in this?  {3, 4, 5, 6, 7}
+
+(10) + 10 + 10 + 10 + 10  / 2^10
+(3 ) + 4  + 5 +  6 +   7 /
+
+->  (1024 - 112) / 1024 = 912/1024 = 0.890625
+
+-------------------------------------------------------------------------------------------
+
+why do this problem?
+
+so that we can see how this was an instance of finding an event in the full binary tree.  nearly everything we do in probability can be refered to events in the full binary tree.  even continuous probability.
+
+scientific reductionism.
+
+the success of STEM is a testament of the triump of reductionism.  reduced instruction sets construct everything else out of the least possible things.
+
+----------
+downton abby, pernicious enemia - cant absorbe viatmine b12, cant construct hemogloban.  you eventually sufficate.  you get less and less energy.  then it was fatal, now we can treat it.
+
+this will help us see through the basean procedures to understand why they work.  be looking to see how and why it works.  what are the elements that are put together to make ti work and how can you use it in a different organization?
+
+=----------------------
+conditional probability exercise
+
+Relativize probability
+http://www.collinsdictionary.com/dictionary/english/relative-probability
+
+we can understand the probability of X
+P(X)
+
+what is the probability of X given Y
+P(X|Y)
+
+indendence:
+P(X|Y) = P(X)
+P(X^Y) = P(X)P(Y)
+
+https://en.wikipedia.org/wiki/Conditional_probability_distribution
+we want to relativize this further:
+
+the idea of P(X|Y, Z)
+
+definition:
+P(X|Y, Z)= P(X^Y | Z)/P(Y|Z)
+
+P(X|Y) = P(X^Y)/P(Y)
+
+exercise:
+
+P(X^Y | Z) = P(X|Z)*P(Y|Z)
+
+but then we need a definition of conditional independence realativized to Z
+
+Indpendence:  P(X|Y,Z)=P(X|Z)
+
+we took the notion of basic independence and realativized it to another set.
+
+as a result of this, we can get the former:
+
+P(X|Z) = P(X|Y, Z)
+P(Y|Z) = P(Y|X, Z)
+
+--------------------
+right answer:
+
+P(X|Y, Z) = P(X|Z)
+P(X|Z) = P(X^Y|Z) / P(Y|Z)
+P(X^Y|Z) = P(X|Z)P(Y|Z)
+
+what if the probability of Y is 0?
+P(X|Y) = P(X^Y)/P(Y)
+you cannot be given Y if the probability of Y is zero.
+
+-------------
+how do you raise the measure of everything (normalize to Y) if Y is zero.  we cant just multiply by a constant factor.
+
+every one dimension thing in a 2 dimensional plain is zero.  but we can change the measure to be its length rather than its area.  there are avenues open to figure out what happens when P(Y) is zero.  it might be application dependent.
+
+--------------------
+chapter 2 from the book is an overview.
+
+read on the internet to find other sources for chapter 2.  other ways they are xplained.
+
+jim royer in cs says the following:
+if you reverse the roles of x and y (instead of dx/dy look at dy/dx), right away its a new subject.  change the notation and it becomes a new subject.  understanding is solid when you know it is independent of notation.
+
+starting wednesday, we will go trhough the text book.

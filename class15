@@ -1,0 +1,86 @@
+# Mon Mar 21 2016 Shaffer Art 205 @ 1545
+# CIS600(400)
+# Howard Blair
+
+
+opens the workbook.  page 5.  he will go over some stuff and tell us what he wants us to do for next time.
+
+bayes theorum follows directly from the definition of conditional probability.
+
+verify bayes theorum:
+
+independence:  P(E|F)=P(E)
+
+P(E|F) = P(E^F)/P(F)
+
+prove P(H|E)= P(E|H)P(H) / P(E)
+
+bayesian conditionalization (this is where bayes theorum becomes contraversial)
+if my degree of belief is tied to a conditional probability, it is bayesian reasoning.
+
+(read korbin nickelson)
+
+total probability theorum
+http://mathworld.wolfram.com/TotalProbabilityTheorem.html
+https://en.wikipedia.org/wiki/Law_of_total_probability
+
+
+----------
+consider 10 things where you know nohting about them other than that one might occur.  you do not know that they are all equally probable.
+
+you can have 0 for bel and !bel or high confidence in both.  this is not necessarily dependent on probability.
+
+utility is the reward for being right.
+
+discussion we should read in korin nickelson about the dutch hook or book or something.
+
+korb and nickelson is our book.
+
+parametrial betting
+
+---------------
+verify theorum 2.2 for n=3
+
+P(X1 ^ X2 ^ X3) = P(X1)P(X2|X1) P(X2)P(X3|X1) P(X3|X1^X2)
+                = P(????????)
+
+----
+basean nets have to reduce to partial order (there cannot be cycles or something)
+
+P(X)=P(X|Y)P(Y)+P(X|!Y)P(!Y)
+
+P(Y|X)P(X)/P(Y) + P()
+
+P(H|E)= P(E|H)P(H) / P(E)
+
+something about breaking x down into cases
+then you can calculate the conditional probabilities across each of the pieces
+
+go back and do these (elementary algebra proofs)
+
+---------------------------
+out of class, for wednesday, verify the table presented in the book from workbook page 8.  table 2.2 page 36 in the book.
+
+-------------
+
+personal remark on probability (subjective opinion).  he thinks that probability reasoning (even in cases) is okay, but you shouldnt have to do it to 5 standard deviations.  do it by what is required by biology science.
+
+---------
+
+you can sort of measure "g" (general intellegence)
+the turing test.  eliza (program) fooled people.  you would say things that was upsetting you and the goal of the program was to get you to keep typing.  it went viral over the mit network.
+
+
+google go player ai thing.
+
+go is incredibly intuitive.  it is almost impossible to predict or come up with algorithms.  far fewer calculations.
+
+our technological world is boostrapped on the previous technological world.  it takes a computer to design a computer because there is too much combinatorial logic involved.
+
+-------------------
+bill joy thinks super intellegence is the worse thing that could happen
+
+neurons couple oscillation things.
+
+there is some microorganism that very complicatedly can move through water.
+
